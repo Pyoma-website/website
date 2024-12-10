@@ -13,7 +13,7 @@ img {
 /* Her hentes vores web-fonte ind */
 @font-face {
   font-family: "minion_proregular";
-  src: url("../../public/minion_webfont/minionpro-regular-webfont.woff2") format("woff2"), url("../../public/minion_webfont/minionpro-regular-webfont.woff") format("woff");
+  src: url("/minion_webfont/minionpro-regular-webfont.woff2") format("woff2"), url("/minion_webfont/minionpro-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
