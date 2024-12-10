@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Her hentes vores web-fonte ind */
+@font-face {
+  font-family: "minion_proregular";
+  src: url("../../public/minion_webfont/minionpro-regular-webfont.woff2") format("woff2"), url("../../public/minion_webfont/minionpro-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  /* Colors */
+  --black: #000000;
+  --mahogany-red: #4c0000;
+  --light-mahogany-red: #900c0d;
+  --desert-storm-white: #faf8f6;
+  --white: #ffffff;
+}
+
+h1 {
+  font-family: "Pinyon Script", cursive;
+  font-size: 84px;
+  color: var(--mahogany-red);
+}
+
+h2 {
+  font-family: "minion_proregular";
+  font-size: 55px;
+  font-weight: bold;
+  color: var(--mahogany-red);
+}
+
+h3 {
+  font-family: "minion_proregular";
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--mahogany-red);
+}
+
+p {
+  font-family: "minion_proregular";
+  font-size: 24px;
+  color: var(--mahogany-red);
+}
+
+.infotekst {
+  font-family: "minion_proregular";
+  font-size: 16px;
+  color: var(--mahogany-red);
+}
