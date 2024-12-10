@@ -1,11 +1,19 @@
 ---
 import "../css/generelt.css"
+import "../css/afvigelser.css"
 import Mainlayout from "../layouts/Mainlayout.astro"
 ---
 
-<Mainlayout title="Forside">
-<h1>Drop 10</h1>
-<h2>300 DKK</h2>
-<p>Vi prøver lige her</p>
-<p class="infotekst">Hej hej hej</p>
-</Mainlayout>
+<main>
+<img src="../../public/logoer/dessertlogo.png" alt="dessertlogo">
+<h1 class="forside_h1">Italiensk vintage</h1>
+</main>
+
+<style>
+main{
+    background-image: url(../../public/forside/forside_billede.png);
+     background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--mahogany-red);
+}
+</style>
