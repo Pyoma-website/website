@@ -35,9 +35,12 @@ import Header from "../components/Header.astro";
 
 
 <style>
+  /* MOBILE VERSION */
+  
+  /* Grid er påsat her, for at der kommer luft i højre side, samt at få placeret hvor billederne og teksten skal være. */
   .forside_container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     position: relative;
   }
@@ -46,14 +49,18 @@ import Header from "../components/Header.astro";
     grid-row: 1/4;
   }
 
-  .overlay_content{
-position: absolute;
-  }
-  .forside_logo{
-
-  }
-.forside_h1{
-
+.forside_backg{
+     height: 410%;
+  object-fit: cover;
 }
 
+  .overlay_content{
+position: absolute;
+margin-left: var( --moblie-40);
+  }
+    /* DESKTOP VERSION */
+
+   @media(min-width:650px){
+    {}
+ }
 </style>
