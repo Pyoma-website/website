@@ -1,12 +1,59 @@
 ---
 import Knapper from "../components/Knapper.astro"
 import "../css/generelt.css"
-import Mainlayout from "../layouts/Mainlayout.astro"
+import "../css/afvigelser.css"
+import Header from "../components/Header.astro";
 ---
 
-<Mainlayout title="Forside">
-<h1>Drop 10</h1>
-<h2>300 DKK</h2>
-<p>Vi prøver lige her</p>
-<p class="infotekst">Hej hej hej</p>
-</Mainlayout>
+<!doctype html>
+<html lang="da">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com"> <!--Henter Google-font -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--Henter Google-font -->
+		<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet"> <!--Henter Google-font -->
+		<title>Forside</title>
+	</head>
+      <body class="forside_body">
+      <Header />
+    <main>
+<div class="forside_container">
+  <div class="first_one">
+    <img class="forside_backg" src="../../public/forside/forside_billede.png" alt="pige">
+     </div>
+    <div class="overlay_content">
+      <img class="forside_logo" src="../../public/logoer/dessertlogo.png" alt="dessertlogo">
+      <h1 class="forside_h1">Italiensk vintage</h1>
+    </div>
+</div>
+  </main>
+  </body>
+</html>
+
+
+<style>
+  .forside_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    position: relative;
+  }
+  .first_one{
+    grid-column: 1/2;
+    grid-row: 1/4;
+  }
+
+  .overlay_content{
+position: absolute;
+  }
+  .forside_logo{
+
+  }
+.forside_h1{
+
+}
+
+</style>
