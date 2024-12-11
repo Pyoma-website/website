@@ -1,7 +1,14 @@
 /* MOBILE VERSION */
 
+/* Forsiden */
+.forside_h1 {
+  color: var(--desert-storm-white);
+}
+
+.forside_body {
+  background: var(--mahogany-red);
+}
+
 /* DESKTOP VERSION */
 @media (min-width: 650px) {
-   {
-  }
 }

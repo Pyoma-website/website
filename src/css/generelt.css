@@ -38,11 +38,18 @@ html {
   --mobile-120: 7.5rem;
 }
 
+a {
+  font-family: "minion_proregular";
+  font-size: 24px;
+  text-decoration: none;
+}
+
 /* MOBILE VERSION */
 
 /* Vores styles af overskrift og tekst */
 h1 {
   font-family: "Pinyon Script", cursive;
+  font-weight: lighter;
   font-size: 84px;
   color: var(--mahogany-red);
 }
