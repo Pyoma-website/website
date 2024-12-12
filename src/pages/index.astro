@@ -28,8 +28,10 @@ import Header from "../components/Header.astro";
       <img class="forside_logo" src="../../public/logoer/dessertlogo.png" alt="dessertlogo">
       <h1 class="forside_h1">Italiensk vintage</h1>
     </div>
-    <p>NYESTE DROP</p>
-     <Knap variant="second">DROP 10</Knap>
+    <div class="forside_turn">
+    <p class="knap_overskrift">NYESTE DROP</p>
+   <button class="forside_knap" type="button">Drop 10</button>
+   </div>
 </div>
   </main>
   </body>
@@ -44,7 +46,9 @@ import Header from "../components/Header.astro";
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    position: relative;
+    height: 100vh; /* Fylder hele skærmen i højden */
+  width: 100%; /* Fylder hele bredden */
+  position: relative; /* For absolut placerede elementer */
   }
   .first_one{
     grid-column: 1/2;
@@ -52,18 +56,48 @@ import Header from "../components/Header.astro";
   }
 
 .forside_backg{
-     height: 410%;
+     height: 100%;
   object-fit: cover;
-  object-position: 20% 100%;
+  object-position: 55% 100%;
 }
 
   .overlay_content{
+    padding-top:60px;
 position: absolute;
 margin-left: var( --moblie-40);
   }
+  
+.forside_turn{
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  grid-column: 2/3;
+    grid-row: 3/4;
+    letter-spacing: 4.8px;
+}
+  .forside_knap{
+     cursor: pointer;
+      padding: 15px 6px;
+      border: solid 1px;
+      border-color: var(--desert-storm-white);
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+      background-color: #ffffff00;  
+
+      color: var(--desert-storm-white);
+      font-family: "minion_proregular";
+      font-size: 1.25rem;
+      text-transform: uppercase;
+              letter-spacing: 4.8px;
+  }
+  /* det skal flyttes til afvigelser */
+.knap_overskrift{
+      color: var(--desert-storm-white);
+      padding-right: 10px;
+          padding-left: 10px;
+}
+
     /* DESKTOP VERSION */
 
    @media(min-width:650px){
-    {}
+
  }
 </style>
