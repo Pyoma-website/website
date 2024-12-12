@@ -45,6 +45,10 @@ a {
   color: var(--mahogany-red);
 }
 
+a.footer {
+  font-size: 20px;
+}
+
 /* MOBILE VERSION */
 
 /* Vores styles af overskrift og tekst */
