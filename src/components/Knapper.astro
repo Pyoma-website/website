@@ -12,27 +12,38 @@ const { variant } = Astro.props;
       cursor: pointer;
       width: 200px;
       padding: 10px 25px;
-      color:  var(--desert-storm-white);
+      border: none;
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+      background-color: var(--mahogany-red);
+
+      color: var(--desert-storm-white);
       font-family: "minion_proregular";
       font-size: 1.25rem; 
       font-weight: bold;
-      
-      background-color: var(--mahogany-red);
-      border: none;
-      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+      text-align: start;
       }
 
-   .primary:hover
+   .primary:hover{
+      background-color: var(--light-mahogany-red);
+      }
 
    .second {
       cursor: pointer;
       padding: 10px 25px;
-      justify-content: center;
+      border: solid 1px;
+      border-color: var(--mahogany-red);
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+      background-color: #faf8f6;  
+
+      color: var(--mahogany-red);
+      font-family: "minion_proregular";
+      font-size: 1.25rem;
+      font-style: italic;
    }
    
-   .second:hover
- @media(min-width:650px){
-    {}
- }
-
+   .second:hover {
+      background: var(--Light-mahogany-red, #900C0D);
+      color: var(--desert-storm-white); 
+      border-color: var(--Light-mahogany-red, #900C0D); 
+   }
 </style>
