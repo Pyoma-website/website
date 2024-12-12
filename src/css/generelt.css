@@ -40,13 +40,8 @@ html {
 
 a {
   font-family: "minion_proregular";
-  font-size: 24px;
   text-decoration: none;
   color: var(--mahogany-red);
-}
-
-a.footer {
-  font-size: 20px;
 }
 
 /* MOBILE VERSION */
