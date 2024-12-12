@@ -3,9 +3,10 @@ import "../css/generelt.css"
 import "../css/afvigelser.css"
 ---
 
+<hr 
+width="100%" size="2" color= var(--light-mahogany-red); noshade: true;> 
+</hr>
 
-<hr width="100%" size="2" color="blue" noshade>
-  
 <div class="footer">
 <div>
 <a href="">KONTAKT</a>
@@ -13,6 +14,9 @@ import "../css/afvigelser.css"
 <a href="">FORSENDELSE & AFHENTNING</a>
 <a href="">COOKIES & PRVACY POLICY</a>
 </div>
+<div class="insta">
+   <a href=""><img src="/logoer/redlogo.png" alt="logo"></a>
+   <div/>
 <div class="logo">
    <a href=""><img src="/logoer/redlogo.png" alt="logo"></a>
 </div>
@@ -21,13 +25,15 @@ import "../css/afvigelser.css"
 /* MOBILE VERSION */
 .footer {
    display: grid;
-   grid-template-columns: 1fr 1fr; 
-
+   grid-template-columns: 1fr 1fr 1fr; 
+   font-size: 20px;
+   line-height: 2rem;
 }
 
-img {
-   width:30 rem;
-   height:30 rem;
+.logo {
+   width: 7rem;
+   height: 7rem;
+   grid-column: 3/3;
 }
 
 
