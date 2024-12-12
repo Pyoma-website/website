@@ -1,0 +1,30 @@
+---
+import Card from "../components/Card.astro"; 
+import Mainlayout from "../layouts/Mainlayout.astro";
+---
+
+<Mainlayout>
+<li>
+    <article class="grid">
+    <Card></Card>
+    <Card></Card>
+    <Card></Card>
+    <Card></Card>
+    <Card></Card>
+    </article>
+</li>
+</Mainlayout>
+
+<style>
+    /* MOBILE VERSION */
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* DESKTOP VERSION */
+
+   @media(min-width:650px){
+    {}
+ }
+</style>

@@ -1,11 +1,30 @@
+<section>
+   <a href="#">
+   <img class="img" src="/outfit_1/bukser.JPG" alt="billede"></img>
+   <!-- <img class="img_hover" src="/outfit_1/bukser2.JPG" alt="billede"></img> -->
+   <p class="info one-line">produkt_navn – produkt_pris DKK</p>
+   <p class="info two-line">produkt_navn </p>
+   <p class="info two-line">– produkt_pris DKK</p>
+   </a>
+<section>
+
 <style>
+    img {
+   aspect-ratio: 1/2;
+   object-fit: cover;
+   }
+
 /* MOBILE VERSION */
-
-
+ @media(max-width:650px){
+  .one-line {
+   display: none;
+}}
 
 /* DESKTOP VERSION */
  @media(min-width:650px){
-    {}
+   .two-line {
+       display: none;
+   }
  }
 
 </style>
