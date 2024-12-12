@@ -22,12 +22,14 @@ import Header from "../components/Header.astro";
     <main>
 <div class="forside_container">
   <div class="first_one">
-    <img class="forside_backg" src="../../public/forside/forside_billede.png" alt="pige">
+    <img class="forside_backg" src="../../public/forside/forside_billede2.jpg" alt="pige">
      </div>
     <div class="overlay_content">
       <img class="forside_logo" src="../../public/logoer/dessertlogo.png" alt="dessertlogo">
       <h1 class="forside_h1">Italiensk vintage</h1>
     </div>
+    <p>NYESTE DROP</p>
+     <Knap variant="second">DROP 10</Knap>
 </div>
   </main>
   </body>
@@ -35,9 +37,12 @@ import Header from "../components/Header.astro";
 
 
 <style>
+  /* MOBILE VERSION */
+  
+  /* Grid er påsat her, for at der kommer luft i højre side, samt at få placeret hvor billederne og teksten skal være. */
   .forside_container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     position: relative;
   }
@@ -46,14 +51,19 @@ import Header from "../components/Header.astro";
     grid-row: 1/4;
   }
 
-  .overlay_content{
-position: absolute;
-  }
-  .forside_logo{
-
-  }
-.forside_h1{
-
+.forside_backg{
+     height: 410%;
+  object-fit: cover;
+  object-position: 20% 100%;
 }
 
+  .overlay_content{
+position: absolute;
+margin-left: var( --moblie-40);
+  }
+    /* DESKTOP VERSION */
+
+   @media(min-width:650px){
+    {}
+ }
 </style>

@@ -1,6 +1,40 @@
+---
+import "../css/generelt.css"
+import "../css/afvigelser.css"
+---
+
+<hr 
+width="100%" size="2" color= var(--light-mahogany-red); noshade: true;> 
+</hr>
+
+<div class="footer">
+<div>
+<a href="">KONTAKT</a>
+<a href="">RETUR POLITIK</a>
+<a href="">FORSENDELSE & AFHENTNING</a>
+<a href="">COOKIES & PRVACY POLICY</a>
+</div>
+<div class="insta">
+   <a href=""><img src="/logoer/redlogo.png" alt="logo"></a>
+   <div/>
+<div class="logo">
+   <a href=""><img src="/logoer/redlogo.png" alt="logo"></a>
+</div>
+</div>
 <style>
 /* MOBILE VERSION */
+.footer {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr; 
+   font-size: 20px;
+   line-height: 2rem;
+}
 
+.logo {
+   width: 7rem;
+   height: 7rem;
+   grid-column: 3/3;
+}
 
 
 /* DESKTOP VERSION */
