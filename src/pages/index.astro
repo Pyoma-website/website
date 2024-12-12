@@ -30,7 +30,8 @@ import Header from "../components/Header.astro";
     </div>
     <div class="forside_turn">
     <p class="knap_overskrift">NYESTE DROP</p>
-   <button class="forside_knap" type="button">Drop 10</button>
+    <a href="/shop">
+   <button class="forside_knap" type="button">Drop 10</button></a>
    </div>
 </div>
   </main>
@@ -88,6 +89,12 @@ margin-left: var( --moblie-40);
       text-transform: uppercase;
       letter-spacing: 4.8px;
   }
+  .forside_knap:hover {
+      background: var(--desert-storm-white);
+      border-color: var(--desert-storm-white); 
+
+      color: var(--mahogany-red); 
+   }
   /* det skal flyttes til afvigelser */
 .knap_overskrift{
       color: var(--desert-storm-white);
@@ -104,7 +111,14 @@ margin-left: var( --moblie-40);
     padding-top: 8rem;
      object-position: 55% 100%;
   }
-
-
+  .forside_h1{
+    margin-left: 60px;
+  }
+  .forside_turn{
+    place-self: start center;
+  }
+  .knap_overskrift{
+    padding-left: 20px;
+}
  }
 </style>
