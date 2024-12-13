@@ -5,7 +5,7 @@ const { produkt } = Astro.props;
 
 
 <li>
-   <a href="#">
+   <a href={`produkter/${produkt.slug}`}>
    <img class="img" src=`../../outfits/${produkt.produkt_image}` alt={produkt.produkt_name}></img>
    <!-- <img class="img_hover" src="/outfit_1/bukser2.JPG" alt="billede"></img> -->
    <p class="info one-line">{produkt.produkt_navn} – {produkt.produkt_pris} DKK</p>

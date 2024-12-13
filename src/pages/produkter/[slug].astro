@@ -1,0 +1,26 @@
+---
+import Mainlayout from '../../layouts/Mainlayout.astro';
+
+export async function getStaticPaths() {
+  const produkter = await fetch("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1/Pyoma_shop", {
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFveHZ3ZWlpdHJncW56cmpkbHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3NDM2NzIsImV4cCI6MjA0OTMxOTY3Mn0.4iCL7wkdvdNR-GKHMGyPkWsPs9SQYD2iEXIX-JkxOA4",
+    },
+  }).then((res) => res.json());
+
+
+ return produkter.map((produkt) => ({
+  params: { slug: produkt.slug },
+  props: { produkter: produkt },
+}));
+}
+
+const { produkt } = Astro.props;
+console.log(produkt)
+---
+
+<Mainlayout>
+     <img class="img" src=`../../../outfits/${produkt.produkt_image}` alt={produkt.produkt_name}></img>
+     <h1>{produkt.produkt_name}</h1>
+</Mainlayout>
+
