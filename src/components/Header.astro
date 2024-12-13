@@ -1,16 +1,264 @@
 ---
 import "../css/generelt.css";
+
 import "../css/afvigelser.css";
 ---
+<header>
+  <div class="container">
+    <div class="subcontainer">
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="/"><img class="logo" src="../../public/logoer/redlogo.png" alt="logo" /></a></li>
+          <li class="nav-item"><a class="nav-link" href="/">SHOP</a></li>
+          <li class="nav-item"><a class="nav-link" href="/liste">OM PYOMA</a></li>
+          <li class="nav-item"><a class="nav-link" href="/produkter">KONTAKT</a></li>
+        </ul>
 
+        <a href="/"><img class="logo" src="../../public/logoer/redlogo.png" alt="Logo" /></a>
+
+    
+          <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        </div>
+      </nav>
+    </div>
 
 
 <style>
 /* MOBILE VERSION */
+      .logo {
+        width: 80px;
+        height: auto;
+      }
+
+      ul {
+        list-style-type: none;
+        text-align: right;
+      }
+
+      li {
+        display: inline;
+      }
+
+      li a {
+      font-family: "minion_proregular";
+  --mahogany-red: #4c0000;
+        font-size: 20px;
+        text-align: right;
+        text-decoration: none;
+        justify-content: space-evenly;
+        border-radius: 40px;
+        padding: 20px;
+      }
+
+      .navbar li a:hover {
+        color: #de5f18;
+      }
+
+      a.active {
+        color: #de5f18;
+      }
+
+      header {
+        background-color: transparent;
+        position: absolute;
+        top: 0%;
+        padding: 0.8rem 0.8rem;
+        width: 100%;
+      }
+
+      .container {
+        width: 100%;
+        margin: auto;
+      }
+
+      .subcontainer {
+        width: auto;
+        margin: auto;
+      }
+
+      .navbar {
+        width: 100%;
+        min-height: 7px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .hamburger {
+        display: block;
+        cursor: pointer;
+        color: #4c0000;
+      }
+
+      .bar {
+        display: block;
+        width: 30px;
+        height: 2px;
+        margin: 5px 0;
+        transition: all 0.8s ease;
+        background-color:#4c0000
+      }
+
+      .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active .bar:nth-child(1) {
+  transform: translateY(6px) rotate(40deg);
+      }
+
+      .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      .nav-menu {
+        position: absolute;
+        left: -200%;
+        top: 0;
+        gap: 0;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        z-index: 0;
+      }
+
+      .nav-item {
+        margin: 16px 0;
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
     
 
 /* DESKTOP VERSION */
  @media(min-width:650px)
-    {}
+    {
+.logo {
+  width: 100px;
+  height: auto;
+}
 
+/* Fjerner punkttegn fra listen og justerer teksten til højre */
+ul {
+  list-style-type: none;
+  text-align: right;
+}
+
+/* Gør listeelementerne inline, så de vises i en række */
+li {
+  display: inline;
+}
+
+/* Definerer linkets font, farve, størrelse og tekstjustering.
+Fjerner understregning, centrerer indholdet og tilføjer afrundede hjørner med en radius på 40px.
+Mellemrum (padding) på 20px omkring linkene
+Justify-content: space-evenly sørger for der er lige fordelt plads mellem elementerne (links) */
+li a {
+  font-family: "minion_proregular";
+  color: black;
+  font-size: 20px;
+  text-align: right;
+  text-decoration: none;
+  justify-content: space-evenly;
+  border-radius: 40px;
+  padding: 20px;
+}
+
+/* Ændrer farven til #f28181 ved hover og for aktive links */
+.navbar li a:hover {
+  color: #f28181;
+}
+
+a.active {
+  color: #f28181;
+}
+
+/*  sticy: positioneret element indtil en bestemt scroll-position nås, hvorefter det bliver fastgjort og opfører sig som et fast positioneret element.
+sticky: menuen forbliver øverst på siden, når man scroller ned */
+header {
+  background-color: #FAF8F6;
+  position: sticky;
+  padding: 0.8rem 2rem;
+}
+
+/* Containeren fylder hele bredden og centrerer indholdet både vandret og lodret
+justify-content: centrere flex-elementerne horisontalt inden for containeren. */
+.container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subcontainer {
+  width: auto;
+  margin: auto;
+}
+
+/* Navigationen fylder hele bredden og har en minimumshøjde på 70px. Indholdet fordeles med plads mellem elementerne og er centreret vertikalt 
+Display: flex; er en CSS-egenskab, gør container til en fleksibel boks. Flexbox er en layoutmodel, der gør det nemmere at designe komplekse layouts og justere elementer inde i en container.*/
+.navbar {
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* justify-content: space-between; er en CSS-egenskab, der bruges i flexbox-layout til at justere flex-elementerne med lige stor afstand mellem dem. */
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Hamburger-ikonet er skjult som standard. Det består af tre stænger med specificerede dimensioner og overgangseffekter.
+Cursor: pointer; håndmakør*/
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin: 5px 0;
+  transition: all 0.8s ease;
+  background-color: black;
+}
+    }
 </style>
+
+  <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      document.querySelectorAll(".nav-link").forEach((n) =>
+        n.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        })
+      );
+    </script>
