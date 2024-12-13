@@ -1,18 +1,36 @@
 ---
 import Card from "../components/Card.astro"; 
 import Mainlayout from "../layouts/Mainlayout.astro";
+
+const produkter = await fetch ("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1/Pyoma_shop", {
+	method: "GET",
+	headers: {
+		apikey:
+		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFveHZ3ZWlpdHJncW56cmpkbHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3NDM2NzIsImV4cCI6MjA0OTMxOTY3Mn0.4iCL7wkdvdNR-GKHMGyPkWsPs9SQYD2iEXIX-JkxOA4" 
+	},
+} 
+).then((res) => res.json()); 
+
+console.log(produkter)
+
 ---
 
-<Mainlayout>
-<li>
-    <article class="grid">
-    <Card></Card>
-    <Card></Card>
-    <Card></Card>
-    <Card></Card>
-    <Card></Card>
-    </article>
-</li>
+ <Mainlayout>
+ <ul>
+  {
+    produkter.map((produkt) => (
+      <Card produkt={produkt} />
+    ))
+  }
+</ul>
+</Mainlayout>
+<!-- <ul>
+{
+    produkter.map((produkt_navn) => (
+        <li>{produkt_navn}</li>
+))
+}   
+</ul> -->
 </Mainlayout>
 
 <style>
