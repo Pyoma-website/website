@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Laag_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512">
+  <!-- Generator: Adobe Illustrator 29.0.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 192)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+        stroke: #5a0606;
+        stroke-miterlimit: 10;
+        stroke-width: 7px;
+      }
+    </style>
+  </defs>
+  <path class="st0" d="M382.1,447.7h-251.2c-35.9,0-64.9-29.1-64.9-64.9v-251.2c0-35.9,29.1-64.9,64.9-64.9h251.2c35.9,0,64.9,29.1,64.9,64.9v251.2c.1,35.9-29,64.9-64.9,64.9Z"/>
+  <circle class="st0" cx="256.5" cy="257.2" r="104.6"/>
+  <line class="st0" x1="312.5" y1="168.9" x2="447.1" y2="168.9"/>
+  <line class="st0" x1="66" y1="168.9" x2="200.5" y2="168.9"/>
+  <circle class="st0" cx="256.5" cy="257.2" r="70.8"/>
+  <line class="st0" x1="118.2" y1="67.9" x2="118.2" y2="168.9"/>
+  <line class="st0" x1="171.3" y1="67.9" x2="171.3" y2="168.9"/>
+  <path class="st0" d="M414,139.2c0,5.8-4.7,10.5-10.5,10.5h-32c-5.8,0-10.5-4.7-10.5-10.5v-32c0-5.8,4.7-10.5,10.5-10.5h32c5.8,0,10.5,4.7,10.5,10.5v32Z"/>
+</svg>
