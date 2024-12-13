@@ -1,12 +1,18 @@
-<section>
+---
+const { produkt } = Astro.props;
+
+---
+
+
+<li>
    <a href="#">
-   <img class="img" src="/outfit_1/bukser.JPG" alt="billede"></img>
+   <img class="img" src=`../../outfits/${produkt.produkt_image}` alt={produkt.produkt_name}></img>
    <!-- <img class="img_hover" src="/outfit_1/bukser2.JPG" alt="billede"></img> -->
-   <p class="info one-line">produkt_navn – produkt_pris DKK</p>
-   <p class="info two-line">produkt_navn </p>
-   <p class="info two-line">– produkt_pris DKK</p>
+   <p class="info one-line">{produkt.produkt_navn} – {produkt.produkt_pris} DKK</p>
+   <p class="info two-line">{produkt.produkt_navn} </p>
+   <p class="info two-line">– {produkt.produkt_pris} DKK</p>
    </a>
-<section>
+</li>
 
 <style>
     img {
