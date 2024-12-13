@@ -3,29 +3,38 @@ import "../css/generelt.css"
 import "../css/afvigelser.css"
 ---
 
+<article>
 <hr 
 width="100%" size="2" color= var(--light-mahogany-red); noshade: true;> 
 </hr>
-
 <div class="footer">
-<div>
-<a href="">KONTAKT</a>
-<a href="">RETUR POLITIK</a>
-<a href="">FORSENDELSE & AFHENTNING</a>
-<a href="">COOKIES & PRVACY POLICY</a>
+   <ul>
+<li><a href="">KONTAKT</a></li>
+<li><a href="">RETUR POLITIK</a></li>
+<li><a href="">FORSENDELSE & AFHENTNING</a></li>
+<li><a href="">COOKIES & PRVACY POLICY</a></li>
+<div class="ikoner">
+<a href=""><img src="/instagram.svg" alt="insta"></a>
+<a href=""><img src="/tiktok.svg" alt="tiktok"></a>
 </div>
-<div class="insta">
-   <a href=""><img src="/logoer/redlogo.png" alt="logo"></a>
-   <div/>
+   </ul>
 <div class="logo">
    <a href=""><img src="/logoer/redlogo.png" alt="logo"></a>
 </div>
 </div>
+
+<div class="form">
+<form action="/submit" method="post">
+   <p class"info">Tilmeld dig vores nyhedsbrev:</p>
+   <input type="text" id="name" name="name">
+</form>
+</div>
+</article>
 <style>
 /* MOBILE VERSION */
 .footer {
    display: grid;
-   grid-template-columns: 1fr 1fr 1fr; 
+   grid-template-columns: 3fr 1fr; 
    font-size: 20px;
    line-height: 2rem;
 }
@@ -36,6 +45,19 @@ width="100%" size="2" color= var(--light-mahogany-red); noshade: true;>
    grid-column: 3/3;
 }
 
+.form {
+   color: var(--mahogany-red);
+   text-align: center;
+   width: 14rem;
+   margin-inline: auto;
+}
+
+.ikoner {
+   width: 4rem;
+   height: 4rem;
+   display: grid;
+   grid-template-columns: 1fr 1fr; 
+}
 
 /* DESKTOP VERSION */
  @media(min-width:650px){
