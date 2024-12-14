@@ -8,20 +8,21 @@ export async function getStaticPaths() {
     },
   }).then((res) => res.json());
 
-
- return produkter.map((produkt) => ({
-  params: { slug: produkt.slug },
-  props: { produkter: produkt },
-}));
+return produkter.map((produkt) =>{
+  return{  
+    params: { slug: produkt.slug },
+    props: { produkt }, 
+  };
+});
 }
 
 const { produkt } = Astro.props;
-console.log(produkt)
+console.log(produkt);
 ---
 
 
 <Mainlayout>
-     <img class="img" src=`../../../outfits/${produkt.produkt_image}` alt={produkt.produkt_name}></img>
-     <h1>{produkt.produkt_name}</h1>
+     <img class="img" src=`../../../outfits/${produkt.produkt_image}` alt={produkt.produkt_navn}></img>
+     <h1>{produkt.produkt_navn}</h1>
 </Mainlayout>
 
