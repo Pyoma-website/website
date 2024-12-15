@@ -14,27 +14,34 @@ const produkter = await fetch ("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1
 ---
 
  <Mainlayout>
+<div class="main">
+<div class="produkter">
+<div  id="drop10">
 <h1>Drop 10</h1>
-<p>Dette drop har fokus på bløde striktrøjer, tidløse jakker og fine nederdele, der gør lag-på-lag til en sjov og legende kunst her i den kolde tid. </p>
- <ul class="grid">
+<p class="beskrivelse">Dette drop har fokus på bløde striktrøjer, tidløse jakker og fine nederdele, der gør lag-på-lag til en sjov og legende kunst her i den kolde tid. </p>
+</div> 
+<ul class="grid">
   {
     produkter.map((produkt) => (
       <Card produkt={produkt} />
     ))
   }
 </ul>
+<div id="drop9">
 <h1>Drop 9</h1>
-<p>I dette drop smelter stil og komfort sammen. Bløde strik, varme jakker og tidløse nuancer i jordtoner sætter scenen for efteråret fyldt med hygge og elegance.</p>
- <ul class="grid">
+<p class="beskrivelse">I dette drop smelter stil og komfort sammen. Bløde strik, varme jakker og tidløse nuancer i jordtoner sætter scenen for efteråret fyldt med hygge og elegance.</p>
+</div> 
+<ul class="grid">
   {
     produkter.map((produkt) => (
       <Card produkt={produkt} />
     ))
   }
 </ul>
-</ul>
+<div id="drop8">
 <h1>Drop 8</h1>
-<p>Let, luftigt og fyldt med farver – dette drop har fokus på den perfekte garderobe til solrige dage og lune aftener. Fra elegante sommerkjoler til afslappede shorts og T-shirts, så du kan føle dig godt tilpas, uanset hvor sommeren bringer dig hen.</p>
+<p class="beskrivelse">Let, luftigt og fyldt med farver – dette drop har fokus på den perfekte garderobe til solrige dage og lune aftener. Fra elegante sommerkjoler til afslappede shorts og T-shirts, så du kan føle dig godt tilpas, uanset hvor sommeren bringer dig hen.</p>
+</div>
  <ul class="grid">
   {
     produkter.map((produkt) => (
@@ -42,13 +49,27 @@ const produkter = await fetch ("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1
     ))
   }
 </ul>
+</div>
+<div class="drop_bar">
+<a href="/shop#drop10" class="drop_link" data-drop="10">10</a>
+<a href="/shop#drop9" class="drop_link" data-drop="9">9</a>
+<a href="/shop#drop8" class="drop_link" data-drop="8">8</a>
+<a href="" class="drop_link" data-drop="7">7</a>
+<a href="" class="drop_link" data-drop="6">6</a>
+<a href="" class="drop_link" data-drop="5">5</a>
+<a href="" class="drop_link" data-drop="4">4</a>
+<a href="" class="drop_link" data-drop="3">3</a>
+<a href="" class="drop_link" data-drop="2">2</a>
+<a href="" class="drop_link" data-drop="1">1</a>
+</div>
+</div>
 </Mainlayout>
 
 <style>
 
   h1 {
     text-align: center;
-    margin-block: var(--mobile-20)
+    margin-top: var(--mobile-40)
   }
 
   p {
@@ -63,8 +84,78 @@ const produkter = await fetch ("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1
     }
 
     /* DESKTOP VERSION */
-
    @media(min-width:650px){
-    {}
- }
+
+    .main {
+      display: grid;
+       grid-template-columns: 6fr 1fr
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    #drop10, #drop9, #drop8 {
+      text-align: center;
+      margin-inline: auto;
+      max-width: 75ch;
+    }
+
+    ul {
+      margin-inline: 8%;
+    }
+
+    .drop_bar {
+      position: fixed;
+      top: 400px;
+      right: 144px;
+      writing-mode: vertical-rl;
+      text-orientation: sideways;
+      letter-spacing: 5px;
+      
+    }
+
+    .drop_link {
+      font-size:24px;
+    }
+
+     .drop_link:hover {
+      font-weight: 900;
+    }
+
+      .drop_link:active {
+      font-weight: 900;
+    }
+    }
+
 </style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll(".drop_link");
+
+    links.forEach(link => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault(); // Forhindrer navigation for demonstration
+
+            // Fjern 'active' fra alle links
+            links.forEach(l => l.classList.remove("active"));
+
+            // Tilføj 'active' til det aktuelle link
+            link.classList.add("active");
+
+            // Tilføj "drop" foran teksten
+            links.forEach(l => {
+                const dropText = l.dataset.drop; // Brug data-drop attribut
+                if (l.classList.contains("active")) {
+                    l.textContent = `DROP ${dropText}`;
+                } else {
+                    l.textContent = dropText;
+                }
+            });
+        });
+    });
+});
+</script>

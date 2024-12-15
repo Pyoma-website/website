@@ -8,9 +8,9 @@ const { produkt } = Astro.props;
    <a href={`produkter/${produkt.slug}`}>
    <img class="img" src=`../../outfits/${produkt.produkt_image}` alt={produkt.produkt_name}></img>
    <!-- <img class="img_hover" src="/outfit_1/bukser2.JPG" alt="billede"></img> -->
-   <p class="info one-line">{produkt.produkt_navn} – {produkt.produkt_pris} DKK</p>
-   <p class="info two-line">{produkt.produkt_navn} </p>
-   <p class="info two-line">– {produkt.produkt_pris} DKK</p>
+   <p class="infotekst one-line">{produkt.produkt_navn} – {produkt.produkt_pris} DKK</p>
+   <p class="infotekst two-line">{produkt.produkt_navn} </p>
+   <p class="infotekst two-line">– {produkt.produkt_pris} DKK</p>
    </a>
 </li>
 
@@ -30,6 +30,10 @@ const { produkt } = Astro.props;
  @media(min-width:650px){
    .two-line {
        display: none;
+   }
+
+   .infotekst {
+      margin-bottom: var(--mobile-20);
    }
  }
 
