@@ -8,46 +8,46 @@ import "../css/afvigelser.css"
 
 <div class="om_firshead">
     <h1>Om Pyoma</h1>
-    <p class="infotekst">“Pyoma er en kvinde med lyst hår og lyse øjne. Hun har en rød kjole på og en kastanje i hånden.”</p>
+    <p class="infotekst" id="pyoma_beskrivelse">“Pyoma er mere end blot et brand: det er en stemning og et univers.”</p>
 </div>
-    <img src="" alt="">
+    <img class="yellow_shirt" src="/om_pyoma/tee_girl.webp" alt="pige i tee">
     <h2 class="om_sechead">Fra Italien til dig</h3>
     <p class="om_secp">Produkterne vi sælger på Pyoma kommer fra Italien. De skal give dig en fornemmelse af sommer, solnedgang og saltvand i håret. Med det sagt, så er det vigtigt at du kan bruge dit tøj hele året rundt. Vores fund er unikke, og nemme at sætte sammen med resten af din gaderope. Pyoma vil gerne inspirere dig til at elske det tøj du køber, og elske historien bag. Ikke et styk tøj er ens, og du vil måske opleve små brugsspor, da du ikke er den første som elsker det stykke. Grunden til at tøjet kan leve videre er fordi, vi kun finder items af god kvailtet.</p>
     <h2 id="standguide" class="om_thihead" >Standguide</h3>
     <p class="om_thip">Alle items har været elsket af en ejer før. Vi indkøber kun tøj i god stand, men vi kan ikke undgå, at tøjet har været elsket før. Vi operere med en skala der hedder som ny -  med brugsspor. Her under kan du se en tabel over, hvordan vi vurdere tøjets stand.</p>
 
-<div>
-    <div>
+<div class="stand_tabel">
+    <div class="som_ny">
         <p>Som ny</p>
-            <hr width="100%" size="2" color= var(--light-mahogany-red); noshade: true;></hr>
+            <hr width="100%" size="2";></hr>
         <p>Produktet har ingen spor af at være brugt.</p>
     </div>
-    <div>
+    <div class="perfekt">
         <p>Perfekt</p>
-            <hr width="100%" size="2" color= var(--light-mahogany-red); noshade: true;></hr>
+            <hr width="100%" size="2";></hr>
         <p>Produktet er i perfekt stand, men kan have et lille slidspor et sted.</p>
     </div>
-    <div>
+    <div class="god">
         <p>God</p>
-            <hr width="100%" size="2" color= var(--light-mahogany-red); noshade: true;></hr>
+            <hr width="100%" size="2";></hr>
         <p>Produktet har små slidspor 1 sted. Det kan f.eks. være syningen der er gået op under ærmet.</p>
     </div>
-    <div>
+    <div class="med_brugsspor">
        <p>Med brugsspor</p>
-            <hr width="100%" size="2" color= var(--light-mahogany-red); noshade: true;></hr>
+            <hr width="100%" size="2"; noshade: true;></hr>
         <p>Produktet har små slidspor 2-3 steder. Der kan også være spor af vask.</p>
     </div>
 </div>
 
 <h2 id="strguide" class="om_fouhead">Størrelsesguide</h3>
 <p class="om_foup">Der er forskel på danske og Italienske størrelse. I nogle af vores items står der ikke størrelser. Vi har vurderet hvilke størrelser tøjet er udefra tabellen nedenfor. Vi anbefaler at du måler dig selv, og følger tabellen.</p>
-<img src="" alt="">
-<img src="" alt="">
+<img src="/om_pyoma/størrelse_infopic.png" alt="kvinde med anvisninger">
+<img src="/om_pyoma/størrelsesguide.webp" alt="">
 <h2 class="om_fifhead">Retur politik</h3>
 <p class="om_fifp">Vi tager ikke vores items retur. Er du utilfreds med dit køb er du velkommen til at kontakte os, ellers anbefaler vi at giver tøjet videre, så vi holder det i en bæredygtig cyklus.</p>
 <h2 class="om_sixhead">Forsendelse & afhentning</h3>
 <p class="om_sixp">Vi sender alle vores items fra Italien. Leveringstiden kan derfor variere, men vi bestræber på, at du modtager din pakke inden for en uge. Pyoma tager ikke ansvar for evt. told og skatter. Vi tilbyder gratis fragt på køb over 500 DKK. I nogle tilfælde kan du efter aftale hente din bestilling i København. Dette kan kun lade sig gøre, hvis du har været i kontakt med os inden.</p>
-<img src="" alt="">
+<img src="/om_pyoma/binder_sko.webp" alt="binder sko">
 <h2 class="om_sevhead">Instagram</h3>
 <a class="om_link" href="https://www.instagram.com/pyomavintage/">@pyomavintage</a>
 
@@ -67,5 +67,13 @@ import "../css/afvigelser.css"
     .om_sechead, .om_thihead, .om_fouhead, .om_fifhead, .om_sevhead{
         padding-top: var(--mobile-80);
     }
-
+    #pyoma_beskrivelse{
+        padding: var(--mobile-20);
+    }
+    .yellow_shirt{
+        padding-left: var(--mobile-40);
+    }
+.som_ny, .perfekt, .god, .med_brugsspor{
+    border-style: solid;
+}
 </style>
