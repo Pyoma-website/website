@@ -18,31 +18,31 @@ import "../css/afvigelser.css"
 
 <div class="stand_tabel">
     <div class="som_ny">
-        <p>Som ny</p>
-            <hr width="100%" size="2";></hr>
-        <p>Produktet har ingen spor af at være brugt.</p>
+        <p class="overskrift1">Som ny</p>
+            <hr></hr>
+        <p class="beskriv1">Produktet har ingen spor af at være brugt.</p>
     </div>
     <div class="perfekt">
-        <p>Perfekt</p>
-            <hr width="100%" size="2";></hr>
-        <p>Produktet er i perfekt stand, men kan have et lille slidspor et sted.</p>
+        <p class="overskrift2">Perfekt</p>
+            <hr></hr>
+        <p class="beskriv2">Produktet er i perfekt stand, men kan have et lille slidspor et sted.</p>
     </div>
     <div class="god">
-        <p>God</p>
-            <hr width="100%" size="2";></hr>
-        <p>Produktet har små slidspor 1 sted. Det kan f.eks. være syningen der er gået op under ærmet.</p>
+        <p class="overskrift3">God</p>
+            <hr></hr>
+        <p class="beskriv3">Produktet har små slidspor 1 sted. Det kan f.eks. være syningen der er gået op under ærmet.</p>
     </div>
     <div class="med_brugsspor">
-       <p>Med brugsspor</p>
-            <hr width="100%" size="2"; noshade: true;></hr>
-        <p>Produktet har små slidspor 2-3 steder. Der kan også være spor af vask.</p>
+       <p class="overskrift4">Med brugsspor</p>
+            <hr></hr>
+        <p class="beskriv4">Produktet har små slidspor 2-3 steder. Der kan også være spor af vask.</p>
     </div>
 </div>
 
 <h2 id="strguide" class="om_fouhead">Størrelsesguide</h3>
 <p class="om_foup">Der er forskel på danske og Italienske størrelse. I nogle af vores items står der ikke størrelser. Vi har vurderet hvilke størrelser tøjet er udefra tabellen nedenfor. Vi anbefaler at du måler dig selv, og følger tabellen.</p>
-<img src="/om_pyoma/størrelse_infopic.png" alt="kvinde med anvisninger">
-<img src="/om_pyoma/størrelsesguide.webp" alt="">
+<img class="info_pic" src="/om_pyoma/størrelse_infopic.png" alt="kvinde med anvisninger">
+<img class="size_guide" src="/om_pyoma/størrelsesguide.webp" alt="størrelsesguide">
 <h2 class="om_fifhead">Retur politik</h3>
 <p class="om_fifp">Vi tager ikke vores items retur. Er du utilfreds med dit køb er du velkommen til at kontakte os, ellers anbefaler vi at giver tøjet videre, så vi holder det i en bæredygtig cyklus.</p>
 <h2 class="om_sixhead">Forsendelse & afhentning</h3>
@@ -57,12 +57,7 @@ import "../css/afvigelser.css"
     .om_firshead{
         color: var(--mahogany-red);
         text-align: center;
-        margin-inline: var(--mobile-40);
         padding: var(--moblie-40);
-    }
-
-    .om_sechead, .om_secp, .om_thihead, .om_thip, .om_fouhead, .om_foup, .om_fifhead, .om_fifp, .om_sixhead, .om_sixp, .om_sevhead, .om_link{
-        margin-inline: var(--mobile-40);
     }
     .om_sechead, .om_thihead, .om_fouhead, .om_fifhead, .om_sevhead{
         padding-top: var(--mobile-80);
@@ -71,9 +66,29 @@ import "../css/afvigelser.css"
         padding: var(--mobile-20);
     }
     .yellow_shirt{
-        padding-left: var(--mobile-40);
+  margin-left: 40px; /* Giver 40px luft til venstre */
+    }
+    .stand_tabel{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 6px;
+        padding-top: var(--mobile-20);
     }
 .som_ny, .perfekt, .god, .med_brugsspor{
     border-style: solid;
+    border-color: var(--mahogany-red);
+    border-width: medium;
 }
+.overskrift1, .overskrift2, .overskrift3, .overskrift4{
+    text-align: center;
+font-weight: bold;
+padding: 5px;
+}
+.beskriv1, .beskriv2, .beskriv3, .beskriv4{
+    padding: 10px;
+}
+.info_pic
+.size_guide
+
 </style>

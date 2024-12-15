@@ -52,6 +52,9 @@ li {
 }
 
 hr {
+  background-color: var(--mahogany-red);
+  height: 1px;
+  border-width: 0;
   color: var(--mahogany-red);
 }
 
