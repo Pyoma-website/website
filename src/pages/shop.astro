@@ -11,12 +11,31 @@ const produkter = await fetch ("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1
 } 
 ).then((res) => res.json()); 
 
-console.log(produkter)
-
 ---
 
  <Mainlayout>
- <ul>
+<h1>Drop 10</h1>
+<p>Dette drop har fokus på bløde striktrøjer, tidløse jakker og fine nederdele, der gør lag-på-lag til en sjov og legende kunst her i den kolde tid. </p>
+ <ul class="grid">
+  {
+    produkter.map((produkt) => (
+      <Card produkt={produkt} />
+    ))
+  }
+</ul>
+<h1>Drop 9</h1>
+<p>I dette drop smelter stil og komfort sammen. Bløde strik, varme jakker og tidløse nuancer i jordtoner sætter scenen for efteråret fyldt med hygge og elegance.</p>
+ <ul class="grid">
+  {
+    produkter.map((produkt) => (
+      <Card produkt={produkt} />
+    ))
+  }
+</ul>
+</ul>
+<h1>Drop 8</h1>
+<p>Let, luftigt og fyldt med farver – dette drop har fokus på den perfekte garderobe til solrige dage og lune aftener. Fra elegante sommerkjoler til afslappede shorts og T-shirts, så du kan føle dig godt tilpas, uanset hvor sommeren bringer dig hen.</p>
+ <ul class="grid">
   {
     produkter.map((produkt) => (
       <Card produkt={produkt} />
@@ -26,10 +45,21 @@ console.log(produkter)
 </Mainlayout>
 
 <style>
+
+  h1 {
+    text-align: center;
+    margin-block: var(--mobile-20)
+  }
+
+  p {
+    margin-bottom: var(--mobile-20);
+  }
+
     /* MOBILE VERSION */
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 12px;
     }
 
     /* DESKTOP VERSION */
