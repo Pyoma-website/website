@@ -24,12 +24,29 @@ import "../css/afvigelser.css"
 <div class="form">
 <form action="/submit" method="post">
    <p class"info">Tilmeld dig vores nyhedsbrev:</p>
-   <input type="text" id="name" name="name">
+   <input type="text" placeholder="Indtast din Email" name="name">
 </form>
 </div>
 </article>
 <style>
 /* MOBILE VERSION */
+article {
+   margin: var(--mobile-20);
+}
+
+input::placeholder {
+font-family: "minion_proregular";
+  font-size: 12px;
+  color: var(--mahogany-red);
+}
+
+input {
+   border: solid 1px;
+   border-color: var(--mahogany-red);
+   padding: 5px;
+   width: 300px;
+}
+
 .footer {
    display: grid;
    grid-template-columns: 3fr 1fr; 
@@ -47,7 +64,6 @@ import "../css/afvigelser.css"
 .form {
    color: var(--mahogany-red);
    text-align: center;
-   width: 14rem;
    margin-inline: auto;
    border-radius: 0;
    border: 1px; 
@@ -63,7 +79,17 @@ import "../css/afvigelser.css"
 
 /* DESKTOP VERSION */
  @media(min-width:650px){
-    {}
+
+   article {
+   margin: var(--desk-40);
+}
+
+.form {
+display: flex;
+justify-content: flex-end;
+margin-top: -80px; 
+}
+
  }
 
 </style>
