@@ -32,8 +32,16 @@ console.log(andre);
 ---
 
 <Mainlayout>
+  <div class="top">
+  <a href="/shop" class="button">
+  <p>Tilbage til shop</p>
+  <img class="arrow" src="/public/arrow.png" alt="arrow">
+  </a>
+</div>
+
+
 <div class="single_view">
-<div class="img_container">
+  <div class="img_container">
   <div class="slides">
     <div class="slide">
       <img class="img" src=`../../../outfits/${produkt.produkt_image}` alt={produkt.produkt_navn}></img>
@@ -88,6 +96,29 @@ console.log(andre);
 
 
 <style>
+/* Tilbage til shop knap */
+.top{
+  margin: var(--mobile-40);
+}
+.button img {
+  max-width: 115px;
+  aspect-ratio: 0;
+}
+.button p {
+  padding-left: 10px;
+  padding-bottom: 5px;
+  font-size: 16px;
+}
+.button{
+  text-decoration: none;
+}
+.button:hover{
+  font-weight: 999;
+}
+.bold_arrow{
+  display: none;
+}
+
 /* Grundopsætning */
 .single_view{
   margin-inline: var(--mobile-40);
