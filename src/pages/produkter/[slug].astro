@@ -20,6 +20,7 @@ return produkter.map((produkt) =>{
 
 const { produkt } = Astro.props;
 
+// Her hentes de andre produkter der hører til produktets outfit //
 const andre = await fetch(`https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1/Pyoma_shop?outfit_nummer=eq.${produkt.outfit_nummer}`, {
   method:"GET",
   headers: {
@@ -29,7 +30,6 @@ const andre = await fetch(`https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1/Pyom
 
 console.log(andre);
 ---
-
 
 <Mainlayout>
 <div class="single_view">
@@ -49,10 +49,6 @@ console.log(andre);
   <button class="prev">&#10094;</button> <!-- Pil til venstre -->
   <button class="next">&#10095;</button> <!-- Pil til højre -->
 </div>
-
-
-
-
 
 <h1>{produkt.produkt_navn}</h1>
      <p>Størrelse (EUR) – {produkt.produkt_str}</p>
