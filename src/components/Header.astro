@@ -22,18 +22,38 @@ import "../css/afvigelser.css";
             <div class="bar"></div>
             <div class="bar"></div>
           </div>
-        </div>
       </nav>
     </div>
+      </div>
+</header>
 
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
 
-<style>
-/* MOBILE VERSION */
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      document.querySelectorAll(".nav-link").forEach((n) =>
+        n.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        })
+      );
+    </script>
+
+    <style>
+      /* DESKTOP VERSION */
       .logo {
-        width: 80px;
+        width: 30px;
         height: auto;
       }
-
+      .menu-section {
+        display: flex;
+        align-items: center;
+      }
       ul {
         list-style-type: none;
         text-align: right;
@@ -44,8 +64,13 @@ import "../css/afvigelser.css";
       }
 
       li a {
+<<<<<<< HEAD
+      font-family: Arial, Helvetica, sans-serif;
+        color: black;
+=======
       font-family: "minion_proregular";
       --mahogany-red: #4c0000;
+>>>>>>> 30e93aca36cc58cea9ec59374a40eecf890f9a18
         font-size: 20px;
         text-align: right;
         text-decoration: none;
@@ -97,7 +122,6 @@ import "../css/afvigelser.css";
       .hamburger {
         display: block;
         cursor: pointer;
-        color: #4c0000;
       }
 
       .bar {
@@ -106,7 +130,7 @@ import "../css/afvigelser.css";
         height: 2px;
         margin: 5px 0;
         transition: all 0.8s ease;
-        background-color:#4c0000
+        background-color: black;
       }
 
       .hamburger.active .bar:nth-child(2) {
@@ -141,123 +165,31 @@ import "../css/afvigelser.css";
       .nav-menu.active {
         left: 0;
       }
-    
 
-/* DESKTOP VERSION */
- @media(min-width:650px)
-    {
-.logo {
-  width: 100px;
-  height: auto;
-}
+      /* DESKTOP */
+      @media (min-width: 750px) 
+      {
+        .hamburger{
+          display: none;
+        }
 
-/* Fjerner punkttegn fra listen og justerer teksten til højre */
-ul {
-  list-style-type: none;
-  text-align: right;
-}
+        .nav.menu{
+          position: static;
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+          width: auto;
+          background-color: red;
+        }
 
-/* Gør listeelementerne inline, så de vises i en række */
-li {
-  display: inline;
-}
+        .nav-item{
+        }
 
-/* Definerer linkets font, farve, størrelse og tekstjustering.
-Fjerner understregning, centrerer indholdet og tilføjer afrundede hjørner med en radius på 40px.
-Mellemrum (padding) på 20px omkring linkene
-Justify-content: space-evenly sørger for der er lige fordelt plads mellem elementerne (links) */
-li a {
-  font-family: "minion_proregular";
-  color: black;
-  font-size: 20px;
-  text-align: right;
-  text-decoration: none;
-  justify-content: space-evenly;
-  border-radius: 40px;
-  padding: 20px;
-}
+        .logo{
+          height: 80px;
+          width: 80px;
+          margin: 0.5rem;
+        }
+      }
+    </style>
 
-/* Ændrer farven til #f28181 ved hover og for aktive links */
-.navbar li a:hover {
-  color: #f28181;
-}
-
-a.active {
-  color: #f28181;
-}
-
-/*  sticy: positioneret element indtil en bestemt scroll-position nås, hvorefter det bliver fastgjort og opfører sig som et fast positioneret element.
-sticky: menuen forbliver øverst på siden, når man scroller ned */
-header {
-  background-color: #FAF8F6;
-  position: sticky;
-  padding: 0.8rem 2rem;
-}
-
-/* Containeren fylder hele bredden og centrerer indholdet både vandret og lodret
-justify-content: centrere flex-elementerne horisontalt inden for containeren. */
-.container {
-  width: 100%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.subcontainer {
-  width: auto;
-  margin: auto;
-}
-
-/* Navigationen fylder hele bredden og har en minimumshøjde på 70px. Indholdet fordeles med plads mellem elementerne og er centreret vertikalt 
-Display: flex; er en CSS-egenskab, gør container til en fleksibel boks. Flexbox er en layoutmodel, der gør det nemmere at designe komplekse layouts og justere elementer inde i en container.*/
-.navbar {
-  width: 100%;
-  min-height: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* justify-content: space-between; er en CSS-egenskab, der bruges i flexbox-layout til at justere flex-elementerne med lige stor afstand mellem dem. */
-.nav-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Hamburger-ikonet er skjult som standard. Det består af tre stænger med specificerede dimensioner og overgangseffekter.
-Cursor: pointer; håndmakør*/
-.hamburger {
-  display: none;
-  cursor: pointer;
-}
-
-.bar {
-  display: block;
-  width: 30px;
-  height: 3px;
-  margin: 5px 0;
-  transition: all 0.8s ease;
-  background-color: black;
-}
-    }
-</style>
-
-  <script>
-      const hamburger = document.querySelector(".hamburger");
-      const navMenu = document.querySelector(".nav-menu");
-
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-      });
-
-      document.querySelectorAll(".nav-link").forEach((n) =>
-        n.addEventListener("click", () => {
-          hamburger.classList.remove("active");
-          navMenu.classList.remove("active");
-        })
-      );
-    </script>
