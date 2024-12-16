@@ -23,10 +23,28 @@ console.log(produkt);
 
 
 <Mainlayout>
-     <img class="img" src=`../../../outfits/${produkt.produkt_image}` alt={produkt.produkt_navn}></img> 
-     <img class="img" src=`../../../outfits/${produkt.produkt_imagehover}` alt={produkt.produkt_navn}></img> 
-     <img class="img" src=`../../../outfits/${produkt.singleview_image}` alt={produkt.produkt_navn}></img> 
-     <h1>{produkt.produkt_navn}</h1>
+<div class="img_container">
+  <div class="slides">
+    <div class="slide">
+      <img class="img" src=`../../../outfits/${produkt.produkt_image}` alt={produkt.produkt_navn}></img>
+    </div>
+    <div class="slide">
+      <img class="img" src=`../../../outfits/${produkt.produkt_imagehover}` alt={produkt.produkt_navn}></img> 
+    </div>
+    <div class="slide">
+       <img class="img" src=`../../../outfits/${produkt.singleview_image}` alt={produkt.produkt_navn}></img> 
+    </div>
+  </div>
+  <!-- Navigation knapper -->
+  <button class="prev">&#10094;</button> <!-- Pil til venstre -->
+  <button class="next">&#10095;</button> <!-- Pil til højre -->
+</div>
+
+
+
+
+
+<h1>{produkt.produkt_navn}</h1>
      <p>Størrelse (EUR) – {produkt.produkt_str}</p>
      <a class="infotekst" href="/om_pyoma#strguide">STØRRELSESGUIDE</a>
      <p>Stand på produktet – {produkt.produkt_stand}</p>
@@ -76,11 +94,72 @@ console.log(produkt);
     </div>
 </Mainlayout>
 
+
+
 <style>
-   img {
+/* Grundopsætning */
+.image_container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Slideshow styling */
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%; /* Tre billeder ved siden af hinanden */
+}
+
+.slide {
+  flex: 0 0 100%; /* Hvert billede fylder hele containerens bredde */
+  text-align: center;
+}
+
+/* Navigation knapper */
+.img_container button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+button.prev {
+  left: 10px; /* Pil til venstre */
+}
+
+button.next {
+  right: 10px; /* Pil til højre */
+}
+/* Desktop styling */
+@media (min-width: 769px) {
+  .image-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tre kolonner */
+    height: auto; /* Tilpas højde */
+  }
+
+  .slides {
+    display: contents; /* Fjern flex-layout for slides */
+    transform: none;
+  }
+
+  button {
+    display: none; /* Skjul knapper på desktop */
+  }
+}
+
+
+/* img {
    aspect-ratio: 1/2;
    object-fit: cover;
-   }
+   } */
 
    a {
     text-decoration: underline;
@@ -133,5 +212,28 @@ document.querySelectorAll(".fold_ud_knap").forEach(function (knap) {
         }
     });
 });
+
+const slides = document.querySelector('.slides');
+const nextButton = document.querySelector('.next');
+const prevButton = document.querySelector('.prev');
+
+let currentSlide = 0; // Start på første slide
+const totalSlides = document.querySelectorAll('.slide').length;
+
+function updateSlide() {
+  const slideWidth = document.querySelector('.slide').clientWidth;
+  slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+}
+
+nextButton.addEventListener('click', () => {
+  currentSlide = (currentSlide + 1) % totalSlides; // Loop tilbage til første slide
+  updateSlide();
+});
+
+prevButton.addEventListener('click', () => {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; // Loop til sidste slide
+  updateSlide();
+});
+
 </script>
 
