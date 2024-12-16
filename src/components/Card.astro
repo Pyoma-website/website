@@ -6,8 +6,10 @@ const { produkt } = Astro.props;
 
 <li>
    <a href={`produkter/${produkt.slug}`}>
-   <img class="img" src=`../../outfits/${produkt.produkt_image}` alt={produkt.produkt_name}></img>
-   <!-- <img class="img_hover" src="/outfit_1/bukser2.JPG" alt="billede"></img> -->
+   <div class="images">
+      <img class="img" src=`../../outfits/${produkt.produkt_image}` alt={produkt.produkt_name}></img>
+      <img class="img_hover" src=`../../outfits/${produkt.produkt_imagehover}` alt={produkt.produkt_name}></img>
+   </div>
    <p class="infotekst one-line">{produkt.produkt_navn} – {produkt.produkt_pris} DKK</p>
    <p class="infotekst two-line">{produkt.produkt_navn} </p>
    <p class="infotekst two-line">– {produkt.produkt_pris} DKK</p>
@@ -15,9 +17,13 @@ const { produkt } = Astro.props;
 </li>
 
 <style>
-    img {
+   img {
    aspect-ratio: 1/2;
    object-fit: cover;
+   }
+
+   .img_hover {
+      display: none;
    }
 
 /* MOBILE VERSION */
@@ -34,6 +40,35 @@ const { produkt } = Astro.props;
 
    .infotekst {
       margin-bottom: var(--mobile-20);
+   }
+
+   .images {
+    position: relative;
+    display: inline-block;
+    aspect-ratio: 1/2;
+   object-fit: cover;
+   }
+
+   .img {
+    display: block;
+    width: 100%;
+    height: auto;
+   }
+
+   .img_hover {
+    display: block;
+    position: absolute;
+    aspect-ratio: 1/1;
+    top: 25%;
+    opacity: 0;
+   }
+
+   .images:hover .img {
+      opacity: 0;
+   }
+
+   .images:hover .img_hover {
+      opacity: 1;
    }
  }
 
