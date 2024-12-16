@@ -1,0 +1,11 @@
+---
+
+const { andre } = Astro.props;
+import Knapper from "./Knapper.astro";
+---
+      <section>
+        <a>{andre.produkt_navn}</a>
+      <p>{andre.produkt_str} – {andre.produkt_pris} DKK</p>
+      </div>
+      <Knapper variant="second kursiv">KØB</Knapper>
+      </section>

@@ -1,6 +1,7 @@
 ---
 import Mainlayout from '../../layouts/Mainlayout.astro';
 import Knapper from '../../components/Knapper.astro';
+import Harmonika from '../../components/Harmonika.astro';
 
 export async function getStaticPaths() {
   const produkter = await fetch("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1/Pyoma_shop", {
@@ -18,10 +19,15 @@ return produkter.map((produkt) =>{
 }
 
 const { produkt } = Astro.props;
-console.log(produkt);
 
+const andre = await fetch(`https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1/Pyoma_shop?outfit_nummer=eq.${produkt.outfit_nummer}`, {
+  method:"GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFveHZ3ZWlpdHJncW56cmpkbHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3NDM2NzIsImV4cCI6MjA0OTMxOTY3Mn0.4iCL7wkdvdNR-GKHMGyPkWsPs9SQYD2iEXIX-JkxOA4",
+  },
+}).then((res) => res.json());
 
-
+console.log(andre);
 ---
 
 
@@ -53,7 +59,7 @@ console.log(produkt);
      <a class="infotekst" href="/om_pyoma#strguide">STØRRELSESGUIDE</a>
      <p>Stand på produktet – {produkt.produkt_stand}</p>
      <a class="infotekst" href="/om_pyoma#standguide">STANDGUIDE</a>
-     <br>
+  <br>
      <div>
     <button class="fold_ud_knap">Beskrivelse <span class="plus">+</span></button>
     <div class="fold_ud_tekst">
@@ -72,31 +78,13 @@ console.log(produkt);
     <h2>{produkt.produkt_pris} DKK</h2>
     <p class="infotekst kursiv">Levering beregnes ved betaling</p>
     <Knapper variant="primary">KØB</Knapper>
+
     <p class="bold">Køb hele outfitet</p>
-    <div class="items">
-      <div class="item2">
-      <div>
-        <a></a>
-      <p>{produkt.produkt_str} – {produkt.produkt_pris} DKK</p>
-      </div>
-      <Knapper variant="second kursiv">KØB</Knapper>
-      </div>
-       <div class="item3">
-      <div>
-        <a></a>
-      <p>{produkt.produkt_str} – {produkt.produkt_pris} DKK</p>
-      </div>
-      <Knapper variant="second kursiv">KØB</Knapper>
-      </div>
-       <div class="item4">
-      <div>
-        <a></a>
-      <p>{produkt.produkt_str} – {produkt.produkt_pris} DKK</p>
-      </div>
-      <Knapper variant="second kursiv">KØB</Knapper>
-      </div>
-    </div>
-</div>
+    {
+    andre.map((andre) => (
+      <Harmonika andre={andre} />
+    ))
+  }
 </Mainlayout>
 
 
