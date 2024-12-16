@@ -19,10 +19,14 @@ return produkter.map((produkt) =>{
 
 const { produkt } = Astro.props;
 console.log(produkt);
+
+
+
 ---
 
 
 <Mainlayout>
+<div class="single_view">
 <div class="img_container">
   <div class="slides">
     <div class="slide">
@@ -92,23 +96,30 @@ console.log(produkt);
       <Knapper variant="second kursiv">KØB</Knapper>
       </div>
     </div>
+</div>
 </Mainlayout>
 
 
 
 <style>
 /* Grundopsætning */
-.image_container {
+.single_view{
+  margin-inline: var(--mobile-40);
+}
+img{
+  aspect-ratio: 1/2;
+  object-fit: cover;
+}
+.img_container {
   position: relative;
   overflow: hidden;
-  width: 100%;
 }
 
 /* Slideshow styling */
 .slides {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 300%; /* Tre billeder ved siden af hinanden */
+  width: 100%;
 }
 
 .slide {
@@ -121,8 +132,7 @@ console.log(produkt);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  color: var(--mahogany-red);
   border: none;
   font-size: 2rem;
   padding: 5px 10px;
