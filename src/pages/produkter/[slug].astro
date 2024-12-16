@@ -1,0 +1,137 @@
+---
+import Mainlayout from '../../layouts/Mainlayout.astro';
+import Knapper from '../../components/Knapper.astro';
+
+export async function getStaticPaths() {
+  const produkter = await fetch("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1/Pyoma_shop", {
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFveHZ3ZWlpdHJncW56cmpkbHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3NDM2NzIsImV4cCI6MjA0OTMxOTY3Mn0.4iCL7wkdvdNR-GKHMGyPkWsPs9SQYD2iEXIX-JkxOA4",
+    },
+  }).then((res) => res.json());
+
+return produkter.map((produkt) =>{
+  return{  
+    params: { slug: produkt.slug },
+    props: { produkt }, 
+  };
+});
+}
+
+const { produkt } = Astro.props;
+console.log(produkt);
+---
+
+
+<Mainlayout>
+     <img class="img" src=`../../../outfits/${produkt.produkt_image}` alt={produkt.produkt_navn}></img> 
+     <img class="img" src=`../../../outfits/${produkt.produkt_imagehover}` alt={produkt.produkt_navn}></img> 
+     <img class="img" src=`../../../outfits/${produkt.singleview_image}` alt={produkt.produkt_navn}></img> 
+     <h1>{produkt.produkt_navn}</h1>
+     <p>Størrelse (EUR) – {produkt.produkt_str}</p>
+     <a class="infotekst" href="/om_pyoma#strguide">STØRRELSESGUIDE</a>
+     <p>Stand på produktet – {produkt.produkt_stand}</p>
+     <a class="infotekst" href="/om_pyoma#standguide">STANDGUIDE</a>
+     <br>
+     <div>
+    <button class="fold_ud_knap">Beskrivelse <span class="plus">+</span></button>
+    <div class="fold_ud_tekst">
+        <p>{produkt.produkt_beskrivelse}</p>
+    </div>
+    </div>
+    <hr>
+    <div class="fold_ud">
+    <button class="fold_ud_knap">Materiale & vask <span class="plus">+</span></button>
+    <div class="fold_ud_tekst">
+        <p>{produkt.produkt_materiale}</p>
+        <p>{produkt.produkt_vaskeanvisninger}</p>
+    </div>
+    </div>
+    <hr>
+    <h2>{produkt.produkt_pris} DKK</h2>
+    <p class="infotekst kursiv">Levering beregnes ved betaling</p>
+    <Knapper variant="primary">KØB</Knapper>
+    <p class="bold">Køb hele outfitet</p>
+    <div class="items">
+      <div class="item2">
+      <div>
+        <a></a>
+      <p>{produkt.produkt_str} – {produkt.produkt_pris} DKK</p>
+      </div>
+      <Knapper variant="second kursiv">KØB</Knapper>
+      </div>
+       <div class="item3">
+      <div>
+        <a></a>
+      <p>{produkt.produkt_str} – {produkt.produkt_pris} DKK</p>
+      </div>
+      <Knapper variant="second kursiv">KØB</Knapper>
+      </div>
+       <div class="item4">
+      <div>
+        <a></a>
+      <p>{produkt.produkt_str} – {produkt.produkt_pris} DKK</p>
+      </div>
+      <Knapper variant="second kursiv">KØB</Knapper>
+      </div>
+    </div>
+</Mainlayout>
+
+<style>
+   img {
+   aspect-ratio: 1/2;
+   object-fit: cover;
+   }
+
+   a {
+    text-decoration: underline;
+   }
+
+   button {
+    cursor: pointer;
+    background-color: #ffffff00;  
+    border: none;
+
+    color: var(--mahogany-red);
+    font-family: "minion_proregular";
+    font-size: 16px;
+   }
+
+   button:hover {
+    font-family: "minion_proregular";
+    font-weight: 900;
+    font-size: 16px;
+   }
+
+   .fold_ud {
+    display: flex;
+    align-items: Stretch;
+   }
+   .fold_ud_tekst {
+    display: none; /* Skjul tekstcontainer som standard */
+}
+
+/* Måske disse to klasser skal flyttes i generelt css? */
+.kursiv {
+  font-style: italic;
+  }
+  .bold {
+    font-weight: 999;
+  }
+</style>
+
+<script>
+document.querySelectorAll(".fold_ud_knap").forEach(function (knap) {
+    knap.addEventListener("click", function () {
+        let content = knap.nextElementSibling; // Find den tilhørende tekstcontainer
+
+        if (content.style.display === "none" || content.style.display === "") {
+            knap.textContent = "-"; // Skift tekst
+            content.style.display = "block"; // Vis teksten
+        } else {
+            knap.textContent = "+"; // Skift tekst
+            content.style.display = "none"; // Skjul teksten
+        }
+    });
+});
+</script>
+

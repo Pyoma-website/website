@@ -1,4 +1,4 @@
----
+  ---
 import Card from "../components/Card.astro"; 
 import Mainlayout from "../layouts/Mainlayout.astro";
 
@@ -11,38 +11,193 @@ const produkter = await fetch ("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1
 } 
 ).then((res) => res.json()); 
 
-console.log(produkter)
-
 ---
 
  <Mainlayout>
- <ul>
+<div class="main">
+<div class="produkter">
+<div  id="drop10">
+<h1>Drop 10</h1>
+<p class="beskrivelse">Dette drop har fokus på tidløse jakker og fine nederdele, der gør lag-på-lag til en sjov og legende kunst her i den kolde tid. </p>
+</div> 
+<ul class="grid">
   {
     produkter.map((produkt) => (
       <Card produkt={produkt} />
     ))
   }
 </ul>
-</Mainlayout>
-<!-- <ul>
-{
-    produkter.map((produkt_navn) => (
-        <li>{produkt_navn}</li>
-))
-}   
-</ul> -->
+<div id="drop9">
+<h1>Drop 9</h1>
+<p class="beskrivelse">Bløde strik, varme jakker og tidløse nuancer i jordtoner sætter scenen for efteråret fyldt med hygge og elegance.</p>
+</div> 
+<ul class="grid">
+  {
+    produkter.map((produkt) => (
+      <Card produkt={produkt} />
+    ))
+  }
+</ul>
+<div id="drop8">
+<h1>Drop 8</h1>
+<p class="beskrivelse">Let, luftigt og fyldt med farver – dette drop har fokus på den perfekte garderobe til solrige dage og lune aftener, så du kan føle dig godt tilpas, uanset hvor sommeren bringer dig hen.</p>
+</div>
+ <ul class="grid">
+  {
+    produkter.map((produkt) => (
+      <Card produkt={produkt} />
+    ))
+  }
+
+</ul>
+</div>
+<div id="drop7"></div>
+<div id="drop6"></div>
+<div id="drop5"></div>
+<div id="drop4"></div>
+<div id="drop3"></div>
+<div id="drop2"></div>
+<div id="drop1"></div>
+<div class="drop_bar">
+<a href="/shop#drop10" class="drop_link" data-drop="10">10</a>
+<a href="/shop#drop9" class="drop_link" data-drop="9">9</a>
+<a href="/shop#drop8" class="drop_link" data-drop="8">8</a>
+<a href="" class="drop_link" data-drop="7">7</a>
+<a href="" class="drop_link" data-drop="6">6</a>
+<a href="" class="drop_link" data-drop="5">5</a>
+<a href="" class="drop_link" data-drop="4">4</a>
+<a href="" class="drop_link" data-drop="3">3</a>
+<a href="" class="drop_link" data-drop="2">2</a>
+<a href="" class="drop_link" data-drop="1">1</a>
+</div>
+</div>
 </Mainlayout>
 
 <style>
+
+  h1 {
+    text-align: center;
+    margin-top: var(--mobile-40);
+  }
+
+  p {
+    margin-bottom: var(--mobile-20);
+  }
+
+  /* Margin */
+  .main {
+    margin-inline: var(--mobile-40);
+    margin-bottom: var(--mobile-40);
+  }
+
     /* MOBILE VERSION */
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 12px;
     }
 
-    /* DESKTOP VERSION */
+    .drop_bar {
+      display: none;
+    }
 
-   @media(min-width:650px){
-    {}
- }
+  /* MELLEM STØRRELSE */
+  @media(min-width:650px) {
+    .main {
+      margin-inline: var(--desk-80);
+    }
+
+     #drop10, #drop9, #drop8 {
+      text-align: center;
+      margin-inline: auto;
+      max-width: 75ch;
+    }
+  }
+    /* DESKTOP VERSION */
+   @media(min-width:1000px){
+    .main {
+      display: grid;
+      grid-template-columns: 6fr 1fr;
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    ul {
+      margin-inline: 8%;
+    }
+
+    .drop_bar {
+      display: block;
+      position: fixed;
+      top: 334px;
+      right: 144px;
+      writing-mode: vertical-rl;
+      text-orientation: sideways;
+      letter-spacing: 5px;
+    }
+
+    .drop_link {
+      font-size:24px;
+    }
+
+     .drop_link:hover {
+      font-weight: 900;
+    }
+
+    .active {
+      font-weight: 900;
+      text-decoration: underline;
+      text-underline-offset: 10px;
+      text-decoration-thickness: 2px;
+    }
+    }
+
 </style>
+
+<script>
+  // Når hele DOM'en er indlæst, køres scriptet 
+document.addEventListener("DOMContentLoaded", () => {
+  // Opretter konstant som vælger alle links (classes med .drop_link)
+    const links = document.querySelectorAll(".drop_link");
+
+     // Går igennem hvert link og tilføj en click-event listener
+    links.forEach(link => {
+        link.addEventListener("click", (event) => {
+          // Fjerner standardadfærden ved klik (navigation via href)
+            event.preventDefault();
+
+            // Fjerner klassen 'active' fra alle links for at nulstille deres styling
+            links.forEach(l => l.classList.remove("active"));
+
+            // Tilføjer klassen 'active' til det aktuelle (aktive) link
+            link.classList.add("active");
+
+            // Opdaterer tekst for alle links
+            links.forEach(l => {
+              // Henter data-drop attributen (f.eks. "10", "9", osv.)
+                const dropText = l.dataset.drop;
+                // Hvis linket har klassen 'active', tilføjes "DROP" foran teksten
+                if (l.classList.contains("active")) {
+                    l.textContent = `DROP ${dropText}`;
+                // Hvis linket ikke er aktivt, vis kun data-drop værdien
+                } else {
+                    l.textContent = dropText;
+                }
+            });
+
+            // Finder ID'et for den sektion, der skal scrolles til 
+            const targetId = `drop${link.dataset.drop}`;
+            // Finder det tilsvarende DOM-element med dette ID
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+            // Hvis elementet findes, scrolls ned til det på siden med en glidende animation
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+});
+</script>

@@ -26,9 +26,12 @@ html {
   --desert-storm-white: #faf8f6;
   --white: #ffffff;
 
+  background-color: var(--desert-storm-white);
+
   /* Afstande */
   --desk-0: 0rem;
   --desk-20: 1.25rem;
+  --desk-40: 2.5rem;
   --desk-80: 5rem;
   --desk-160: 10rem;
   --desk-240: 15rem;
@@ -45,6 +48,17 @@ a {
   color: var(--mahogany-red);
 }
 
+li {
+  list-style: none;
+}
+
+hr {
+  background-color: var(--mahogany-red);
+  height: 1px;
+  border-width: 0;
+  color: var(--mahogany-red);
+}
+
 /* MOBILE VERSION */
 
 /* Vores styles af overskrift og tekst */
@@ -57,7 +71,7 @@ h1 {
 
 h2 {
   font-family: "minion_proregular";
-  font-size: 36px;
+  font-size: 24px;
   font-weight: bold;
   color: var(--mahogany-red);
 }
@@ -84,7 +98,7 @@ p {
   }
 
   h2 {
-    font-size: 55px;
+    font-size: 36px;
   }
 
   p {
