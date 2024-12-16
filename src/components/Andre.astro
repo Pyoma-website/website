@@ -3,9 +3,15 @@
 const { andre } = Astro.props;
 import Knapper from "./Knapper.astro";
 ---
+ <!-- <a href={`produkter/${produkt.slug}`}> -->
       <section>
-        <a>{andre.produkt_navn}</a>
+        <a href="" >{andre.produkt_navn}</a>
+        <!-- {`produkter/${produkt.slug}` -->
       <p>{andre.produkt_str} – {andre.produkt_pris} DKK</p>
       </div>
       <Knapper variant="second kursiv">KØB</Knapper>
       </section>
+
+  <style>
+
+  </style>

@@ -1,7 +1,7 @@
 ---
 import Mainlayout from '../../layouts/Mainlayout.astro';
 import Knapper from '../../components/Knapper.astro';
-import Harmonika from '../../components/Harmonika.astro';
+import Andre from '../../components/andre.astro';
 
 export async function getStaticPaths() {
   const produkter = await fetch("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1/Pyoma_shop", {
@@ -78,7 +78,7 @@ console.log(andre);
     <p class="bold">Køb hele outfitet</p>
     {
     andre.map((andre) => (
-      <Harmonika andre={andre} />
+      <Andre andre={andre} />
     ))
   }
 </Mainlayout>
