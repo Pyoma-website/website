@@ -19,7 +19,7 @@ import "../css/afvigelser.css"
 <div class="form">
 <form action="/submit" method="post">
    <p class"info">Tilmeld dig vores nyhedsbrev:</p>
-   <input type="text" id="name" name="name">
+   <input type="text" placeholder="Indtast din Email" name="name">
 </form>
 </div>
 </div>
@@ -51,6 +51,27 @@ import "../css/afvigelser.css"
 .henvendelser{
     padding-top: var(--mobile-20);
     padding-bottom: var(--mobile-80);
+}
+.form {
+   color: var(--mahogany-red);
+   text-align: center;
+   margin-inline: auto;
+   border-radius: 0;
+   border: 1px; 
+   border-color: var(--mahogany-red);
+
+   input::placeholder {
+font-family: "minion_proregular";
+  font-size: 12px;
+  color: var(--mahogany-red);
+}
+
+input {
+   border: solid 1px;
+   border-color: var(--mahogany-red);
+   padding: 5px;
+   width: 300px;
+}
 }
    @media(min-width:650px){
        .kontakt_side{
