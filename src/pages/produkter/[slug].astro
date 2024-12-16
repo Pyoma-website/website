@@ -49,7 +49,7 @@ console.log(andre);
   <button class="prev">&#10094;</button> <!-- Pil til venstre -->
   <button class="next">&#10095;</button> <!-- Pil til højre -->
 </div>
-
+<div>
 <h1>{produkt.produkt_navn}</h1>
      <p>Størrelse (EUR) – {produkt.produkt_str}</p>
      <a class="infotekst" href="/om_pyoma#strguide">STØRRELSESGUIDE</a>
@@ -81,6 +81,8 @@ console.log(andre);
       <Andre andre={andre} />
     ))
   }
+  </div>
+  </div>
 </Mainlayout>
 
 
@@ -131,30 +133,10 @@ button.prev {
 button.next {
   right: 10px; /* Pil til højre */
 }
-/* Desktop styling */
-@media (min-width: 769px) {
-  .image-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tre kolonner */
-    height: auto; /* Tilpas højde */
-  }
 
-  .slides {
-    display: contents; /* Fjern flex-layout for slides */
-    transform: none;
-  }
-
-  button {
-    display: none; /* Skjul knapper på desktop */
-  }
+h1, p{
+  padding-top: var(--mobile-20);
 }
-
-
-/* img {
-   aspect-ratio: 1/2;
-   object-fit: cover;
-   } */
-
    a {
     text-decoration: underline;
    }
@@ -181,6 +163,28 @@ button.next {
    }
    .fold_ud_tekst {
     display: none; /* Skjul tekstcontainer som standard */
+}
+
+/* Desktop styling */
+@media (min-width: 769px) {
+  .single_view{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  .img_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tre kolonner */
+    height: auto; /* Tilpas højde */
+  }
+
+  .slides {
+    display: contents; /* Fjern flex-layout for slides */
+    transform: none;
+  }
+
+  button {
+    display: none; /* Skjul knapper på desktop */
+  }
 }
 
 /* Måske disse to klasser skal flyttes i generelt css? */
