@@ -4,14 +4,45 @@ const { andre } = Astro.props;
 import Knapper from "./Knapper.astro";
 ---
  <!-- <a href={`produkter/${produkt.slug}`}> -->
-      <section>
-        <a href="" >{andre.produkt_navn}</a>
-        <!-- {`produkter/${produkt.slug}` -->
-      <p>{andre.produkt_str} – {andre.produkt_pris} DKK</p>
+      <section class="grid">
+      <div>
+        <a href={`${andre.slug}`}>{andre.produkt_navn}</a>
+      <p> Str. {andre.produkt_str} – {andre.produkt_pris} DKK</p>
       </div>
-      <Knapper variant="second kursiv">KØB</Knapper>
+       <div class="knap">
+      <Knapper variant="second">KØB</Knapper>
+      </div>
       </section>
 
   <style>
+    section {
+      margin-block: var(--mobile-40)
+    }
+
+    a {
+      cursor: pointer;
+      text-transform: uppercase;
+      text-decoration: underline;
+      font-size: 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+    }
+
+    .knap {
+        place-self: start end;
+    }
+
+    /* DESKTOP VERSION */
+  @media(min-width:650px) {
+    a {
+      cursor: pointer;
+      text-transform: uppercase;
+      text-decoration: underline;
+      font-size: 24px;
+    }
+    }
 
   </style>
