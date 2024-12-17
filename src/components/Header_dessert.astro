@@ -9,9 +9,9 @@ import "../css/afvigelser.css";
         <nav>
             <ul class="menu">
                 <li class="logo_mobil"><a href="/"><img class="logo" src="/logoer/redlogo.png" alt="logo" /></a></li>
-                <li><a href="/shop">SHOP</a></li>
+                <li><a class="menu_shop" href="/shop">SHOP</a></li>
                 <div class="dropdown">
-                    <li><a href="/om_pyoma" class="dropbtn">OM PYOMA <i class="fa fa-caret-down"></i></a></li>
+                    <li><a class="menu_om_pyoma dropbtn" href="/om_pyoma">OM PYOMA <i class="fa fa-caret-down"></i></a></li>
                     <div class="dropdown-content">
                         <div></div>
                         <div>
@@ -27,7 +27,7 @@ import "../css/afvigelser.css";
                         <div></div>
                     </div>
                 </div> 
-                <li><a href="/kontakt">KONTAKT</a></li>
+                <li><a class="menu_kontakt" href="/kontakt">KONTAKT</a></li>
                 
             </ul>
             <div class="burger">
@@ -206,6 +206,7 @@ import "../css/afvigelser.css";
     </style>
 
     <script>
+    ///         BURGER-MENU         ///
     const burger = document.querySelector(".burger"); // Burger-ikonet
     const nav = document.querySelector("nav"); // Navigationselementet 
     const links = document.querySelectorAll(".menu li a"); // Alle links i menuen
@@ -224,12 +225,9 @@ import "../css/afvigelser.css";
      });
     });
 
-    // Aktiv på links 
-    const navigation = document.querySelector("a");
+    ///         AKTIVE NAVIGATIONSPUNKTER         ///
+    const queryString = window.location.href; // Opretter en konstant med den aktive URL
+    const hvorErVi = queryString.substring( queryString.lastIndexOf("/")+1); // Substring udtrække filnavnet fra URL'en, finder positionen af det sidste / i URL'en og +1 springer over /-tegnet og får kun den del, der kommer efter det sidste skråstregstegn.
+    document.querySelector(`.menu_${hvorErVi}`).classList.add("active") // Tilføjer klassen active til den aktive URL
 
-    navigation.addEventListener("click", () => {
-        navigation.classList.add("active");
-    });
-
-
-    </script>
+     </script>

@@ -47,8 +47,8 @@ import HeaderRed from "../components/Header_red.astro"
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     height: 100vh; /* Fylder hele skærmen i højden */
-  width: 100%; /* Fylder hele bredden */
-  position: relative; /* For absolut placerede elementer */
+    width: 100%; /* Fylder hele bredden */
+    position: relative; /* For absolut placerede elementer */
   }
   .first_one{
     grid-column: 1/2;
@@ -57,22 +57,23 @@ import HeaderRed from "../components/Header_red.astro"
 
 .forside_backg{
      height: 100%;
-  object-fit: cover;
-  object-position: 55% 100%;
+    object-fit: cover;
+    object-position: 55% 100%;
 }
 
   .overlay_content{
-    padding-top:60px;
-position: absolute;
-margin-left: var( --moblie-40);
+    padding-top: 60px;
+    position: absolute;
+    margin-left: var(--mobile-40);
   }
   
 .forside_turn{
   writing-mode: vertical-rl;
   text-orientation: sideways;
   grid-column: 2/3;
-    grid-row: 3/4;
-    letter-spacing: 4.8px;
+  grid-row: 3/4;
+  letter-spacing: 4.8px;
+  margin-block: auto;
 }
   .forside_knap{
      cursor: pointer;
@@ -98,8 +99,8 @@ margin-left: var( --moblie-40);
 .knap_overskrift{
       color: var(--desert-storm-white);
       padding-right: 10px;
-          padding-left: 10px;
-}
+        padding-left: 10px;
+  }
 
     /* DESKTOP VERSION */
    @media(min-width:650px){
@@ -107,11 +108,21 @@ margin-left: var( --moblie-40);
     grid-template-columns: 4fr 1fr;
   }
   .first_one{
-    padding-top: 8rem;
+    padding-top: var(--desk-80);
      object-position: 55% 100%;
   }
-  .forside_h1{
-    margin-left: 60px;
+  /* .overlay_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  } */
+
+.forside_logo {
+   margin-top: -8rem; 
+  }
+
+  .forside_h1 {
+    /* margin-left: 10rem; */
   }
   .forside_turn{
     place-self: start center;
