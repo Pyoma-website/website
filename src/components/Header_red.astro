@@ -4,11 +4,11 @@ import "../css/afvigelser.css";
 ---
  <header class="header">
         <div class="logo_container">
-            <a href="/"><img class="logo_desk" src="/logoer/redlogo.png" alt="logo" /></a>
+            <a href="/"><img class="logo_desk" src="/logoer/dessertlogo.png" alt="logo" /></a>
         </div>
         <nav>
             <ul class="menu">
-                <li class="logo_mobil"><a href="/"><img class="logo" src="/logoer/redlogo.png" alt="logo" /></a></li>
+                <li class="logo_mobil"><a href="/"><img class="logo" src="/logoer/dessertlogo.png" alt="logo" /></a></li>
                 <li><a href="/shop">SHOP</a></li>
                 <div class="dropdown">
                     <li><a href="/om_pyoma" class="dropbtn">OM PYOMA <i class="fa fa-caret-down"></i></a></li>
@@ -38,7 +38,7 @@ import "../css/afvigelser.css";
         </nav>
         <div class="ikoner">
             <p><span>DA </span>/ EN</p>
-            <img class="kurv" src="/redkurv.png" alt="indkøbskurv"></img> 
+            <img class="kurv" src="/dessertkurv.png" alt="indkøbskurv"></img> 
         </div>
     </header>
 
@@ -49,7 +49,7 @@ import "../css/afvigelser.css";
             position: fixed; /* Fast i forhold til skærmen */
             z-index: 1; /* Lægger headeren over indholdet på siden */
             top: 0; /* Helt i toppen */
-            background-color: var(--desert-storm-white);
+            background-color: var(--mahogany-red);
             align-items: center;
             width: 100%;
             padding-inline: var(--desk-20);
@@ -89,6 +89,10 @@ import "../css/afvigelser.css";
             gap: var(--desk-20);
         }
 
+        p {
+            color: var(--desert-storm-white);
+        }
+
         .burger {
         width: 40px; /* Bredde på burger-ikonet */
         cursor: pointer; /* Ændrer cursoren til en hånd */
@@ -98,13 +102,14 @@ import "../css/afvigelser.css";
         .burger .line {  /* Burger-linjerne */
         width: 100%; /* Fulde bredde */
         height: 3px; /* Højde på hver linje */
-        background-color: var(--mahogany-red); /* Linjefarve */
+        background-color: var(--desert-storm-white); /* Linjefarve */
         margin-bottom: 5px; /* Afstand mellem linjerne */
         transition: 0.2s linear; /* Overgangseffekt på linjerne */
         }
 
         a {
-         font-size: 24px; /* Ændrer tekststørrelsen i burger-menuen */
+        font-size: 24px; 
+         color: var(--desert-storm-white);
         }
 
         a:hover {
@@ -118,11 +123,18 @@ import "../css/afvigelser.css";
             text-decoration-thickness: 2px;
         }
 
+        .active {
+             font-weight: 900;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+            text-decoration-thickness: 2px;
+        }
+
         /*** Dropdown styling ***/
        .dropdown-content {
             display: none;
             position: absolute;
-            background-color: var(--desert-storm-white);
+            background-color: var(--mahogany-red);
             width: 100%;
             left: 0;
             z-index: -1; /* Lægger drop-down under headeren */
@@ -182,7 +194,7 @@ import "../css/afvigelser.css";
           /*** Når den er aktiv, kommer menuen frem. Dens styling ***/
         nav.active .menu {
          display: block; /* Viser burger-menuen på små skærme */
-         background-color: var(--desert-storm-white); /* Baggrundsfarve */
+         background-color: var(--mahogany-red); /* Baggrundsfarve */
          position: absolute; /* Positionering i forhold til viewport */
          top: 60px; /* Afstand fra toppen */
          left: 0; /* Placering fra venstre */
@@ -216,4 +228,3 @@ import "../css/afvigelser.css";
      nav.classList.remove("active"); // Fjerner "active" klassen fra navigationen ved klik på et link
      });
     });
-    </script>
