@@ -66,18 +66,19 @@ console.log(andre);
   <br>
 <div class="harmonika">
      <div class="fold_ud">
-    <button class="fold_ud_knap">Beskrivelse <span class="plus">+</span></button>
-    <div class="fold_ud_tekst">
-        <p>{produkt.produkt_beskrivelse}</p>
-</div>
-</div>
+         <div class="fold_ud_tekst">
+             <p>{produkt.produkt_beskrivelse}</p>
+          </div>
+
+         <p class="fold_ud_knap"><span>Beskrivelse</span>  <span class="plus">+</span></p>
+    </div>
     <hr>
     <div class="fold_ud">
-    <button class="fold_ud_knap">Materiale & vask <span class="plus">+</span></button>
-    <div class="fold_ud_tekst">
+      <div class="fold_ud_tekst">
         <p>{produkt.produkt_materiale}</p>
         <p>{produkt.produkt_vaskeanvisninger}</p>
-    </div>
+      </div>
+      <p class="fold_ud_knap"><span>Materiale & vask</span> <span class="plus">+</span></p>
     </div>
         <hr>
   </div>
@@ -192,7 +193,12 @@ button.next {
    .harmonika{
     margin-block: var(--mobile-20);
    }
-
+  .fold_ud_knap{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
    .fold_ud {
     display: flex;
     align-items: Stretch;
@@ -207,7 +213,7 @@ padding-block: 4px;
   padding-top: var(--mobile-80);
   padding-bottom: var(--mobile-20);
 }
-  
+
 
 /* Desktop styling */
 @media (min-width: 769px) {
@@ -247,15 +253,21 @@ padding-block: 4px;
 </style>
 
 <script>
-document.querySelectorAll(".fold_ud_knap").forEach(function (knap) {
+document.querySelectorAll(".fold_ud_knap").forEach(function (knap, index) {
     knap.addEventListener("click", function () {
-        let content = knap.nextElementSibling; // Find den tilhørende tekstcontainer
+        let content = knap.previousElementSibling; // Find den tilhørende tekstcontainer
 
         if (content.style.display === "none" || content.style.display === "") {
             knap.textContent = "-"; // Skift tekst
+            knap.style.width = "auto"; // 
             content.style.display = "block"; // Vis teksten
         } else {
-            knap.textContent = "+"; // Skift tekst
+          if (index == 0) {
+            knap.innerHTML = '<span>Beskrivelse</span>  <span class="plus">+</span>'; // Skift tekst
+          } else {
+            knap.innerHTML = '<span>Materiale & vask</span> <span class="plus">+</span>'; // Skift tekst
+          }
+            knap.style.width = "100%";
             content.style.display = "none"; // Skjul teksten
         }
     });
