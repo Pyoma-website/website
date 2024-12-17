@@ -43,10 +43,8 @@ html {
   --mobile-120: 7.5rem;
 }
 
-a {
-  font-family: "minion_proregular";
-  text-decoration: none;
-  color: var(--mahogany-red);
+main {
+  margin-top: 65px;
 }
 
 li {
@@ -83,6 +81,13 @@ p {
   color: var(--mahogany-red);
 }
 
+a {
+  font-family: "minion_proregular";
+  text-decoration: none;
+  color: var(--mahogany-red);
+  font-size: 16px;
+}
+
 .infotekst {
   font-family: "minion_proregular";
   font-size: 12px;
@@ -92,8 +97,7 @@ p {
 /* DESKTOP VERSION */
 
 /* Vores styles af overskrift og tekst */
-
-@media (min-width: 650px) {
+@media (min-width: 1000px) {
   main {
     margin-top: 100px;
   }
@@ -111,7 +115,17 @@ p {
     font-size: 21px;
   }
 
+  a {
+    font-size: 21px;
+  }
+
   .infotekst {
     font-size: 16px;
+  }
+
+  #drop10,
+  #drop9,
+  #drop8 {
+    scroll-margin-top: 110px;
   }
 }
