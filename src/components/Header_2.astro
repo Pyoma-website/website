@@ -1,0 +1,219 @@
+---
+import "../css/generelt.css";
+import "../css/afvigelser.css";
+---
+ <header class="header">
+        <div class="logo_container">
+            <a href="/"><img class="logo_desk" src="/logoer/redlogo.png" alt="logo" /></a>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li class="logo_mobil"><a href="/"><img class="logo" src="/logoer/redlogo.png" alt="logo" /></a></li>
+                <li><a href="/shop">SHOP</a></li>
+                <div class="dropdown">
+                    <li><a href="/om_pyoma" class="dropbtn">OM PYOMA <i class="fa fa-caret-down"></i></a></li>
+                    <div class="dropdown-content">
+                        <div></div>
+                        <div>
+                         <a href="/om_pyoma#fra_italien">Fra Italien til dig</a>
+                         <a href="/om_pyoma#standguide">Standguide</a>
+                         <a href="/om_pyoma#strguide">Størrelsesguide</a>
+                         </div>
+                         <div>
+                         <a href="/om_pyoma#forsendelse">Forsendelse & afhentning</a>
+                         <a href="/om_pyoma#forsendelse">Returpolitik</a>
+                         <a href="/om_pyoma#instagram">Instagram</a>
+                         </div>
+                        <div></div>
+                    </div>
+                </div> 
+                <li><a href="/kontakt">KONTAKT</a></li>
+                
+            </ul>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+        <div class="ikoner">
+            <p><span>DA </span>/ EN</p>
+            <img class="kurv" src="/redkurv.png" alt="indkøbskurv"></img> 
+        </div>
+    </header>
+
+    <style>
+        .header {
+            display: flex; /* Bruger flexbox for layout */
+            justify-content: space-between; /* Placerer elementerne med lige mellemrum */
+            position: fixed; /* Fast i forhold til skærmen */
+            z-index: 1; /* Lægger headeren over indholdet på siden */
+            top: 0; /* Helt i toppen */
+            background-color: var(--desert-storm-white);
+            align-items: center;
+            width: 100%;
+            padding-inline: var(--desk-20);
+        }
+
+        .logo_container {
+            width: 180px;
+        }
+
+        .logo_desk {
+            width: 100px;
+        }
+
+        .logo_mobil {
+            display: none;
+        }
+    
+        .menu {
+            display: flex; /* Bruger flexbox for layout */
+            gap: var(--desk-60);
+        }
+
+        span {
+            font-weight: 900;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+            text-decoration-thickness: 2px;
+        }
+
+        .kurv {
+            width: 75px;
+        }
+
+        .ikoner {
+            display: flex; /* Bruger flexbox for layout */
+            align-items: center;
+            gap: var(--desk-20);
+        }
+
+        .burger {
+        width: 40px; /* Bredde på burger-ikonet */
+        cursor: pointer; /* Ændrer cursoren til en hånd */
+        display: none; /* Skjuler burger-ikonet som standard */
+        }
+
+        .burger .line {  /* Burger-linjerne */
+        width: 100%; /* Fulde bredde */
+        height: 3px; /* Højde på hver linje */
+        background-color: var(--mahogany-red); /* Linjefarve */
+        margin-bottom: 5px; /* Afstand mellem linjerne */
+        transition: 0.2s linear; /* Overgangseffekt på linjerne */
+        }
+
+        a {
+         font-size: 24px; /* Ændrer tekststørrelsen i burger-menuen */
+        }
+
+        a:hover {
+            font-weight: 900;
+        }
+
+        a:active {
+            font-weight: 900;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+            text-decoration-thickness: 2px;
+        }
+
+        /*** Dropdown styling ***/
+       .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--desert-storm-white);
+            width: 100%;
+            left: 0;
+            z-index: -1; /* Lægger drop-down under headeren */
+            padding-block: var(--desk-80);
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        /*** Mobilsite størrelse ***/
+        @media screen and (max-width: 650px) {
+           /*** Rotere linjer til et kryds ***/
+        .burger.active .line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px); /* Roterer og flytter den første linje */
+            transition: 0.2s linear; /* Overgangseffekt */
+        }
+
+        .burger.active .line:nth-child(2) {
+            opacity: 0; /* Gør den anden linje usynlig */
+            transition: 0.15s linear; /* Overgangseffekt */
+        }
+
+        .burger.active .line:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px); /* Roterer og flytter den tredje linje */
+            transition: 0.2s linear; /* Overgangseffekt */
+        }
+
+        .menu {
+         display: none; /* Skjuler den normale menu på små skærme */
+         right: 0;
+        }
+
+        .burger {
+         display: block; /* Viser burger-ikonet på små skærme */
+         position: absolute;
+         left: var(--desk-20);
+         top: var(--desk-20);
+         } 
+
+        .logo_desk {
+            display: none;
+        }
+
+        .logo_mobil {
+            display: block;
+            width: 100px;
+        }
+
+          /*** Når den er aktiv, kommer menuen frem. Dens styling ***/
+        nav.active .menu {
+         display: block; /* Viser burger-menuen på små skærme */
+         background-color: var(--desert-storm-white); /* Baggrundsfarve */
+         position: absolute; /* Positionering i forhold til viewport */
+         top: 60px; /* Afstand fra toppen */
+         left: 0; /* Placering fra venstre */
+         width: 100%; /* Fulde bredde */
+         height: 100vh;
+        }
+
+         nav.active .menu li {
+         margin-inline: auto; /* Tilpasning af margener mellem menu-punkter */
+         margin-block: var(--mobile-80);
+         text-align: center;
+        }
+        }
+    </style>
+
+    <script>
+    const burger = document.querySelector(".burger"); // Burger-ikonet
+    const nav = document.querySelector("nav"); // Navigationselementet 
+    const links = document.querySelectorAll(".menu li a"); // Alle links i menuen
+
+    // Tilføj en event listener til burger-ikonet for at aktivere burgermenuen
+    burger.addEventListener("click", () => {
+     burger.classList.toggle("active"); // Tilføjer eller fjerner "active" klassen fra burger-ikonet
+     nav.classList.toggle("active"); // Tilføjer eller fjerner "active" klassen fra navigationen
+    });
+
+    // Tilføj event listeners til hvert link i menuen
+    links.forEach((link) => {
+        link.addEventListener("click", () => {
+      burger.classList.remove("active"); // Fjerner "active" klassen fra burger-ikonet ved klik på et link
+     nav.classList.remove("active"); // Fjerner "active" klassen fra navigationen ved klik på et link
+     });
+    });
+    </script>
