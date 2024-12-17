@@ -57,19 +57,20 @@ console.log(andre);
   <button class="prev">&#10094;</button> <!-- Pil til venstre -->
   <button class="next">&#10095;</button> <!-- Pil til højre -->
 </div>
-<div>
-<h1>{produkt.produkt_navn}</h1>
+<div class="info_kolonne">
+<h1 class="produktnavn">{produkt.produkt_navn}</h1>
      <p>Størrelse (EUR) – {produkt.produkt_str}</p>
      <a class="infotekst" href="/om_pyoma#strguide">STØRRELSESGUIDE</a>
      <p>Stand på produktet – {produkt.produkt_stand}</p>
      <a class="infotekst" href="/om_pyoma#standguide">STANDGUIDE</a>
   <br>
-     <div>
+<div class="harmonika">
+     <div class="fold_ud">
     <button class="fold_ud_knap">Beskrivelse <span class="plus">+</span></button>
     <div class="fold_ud_tekst">
         <p>{produkt.produkt_beskrivelse}</p>
-    </div>
-    </div>
+</div>
+</div>
     <hr>
     <div class="fold_ud">
     <button class="fold_ud_knap">Materiale & vask <span class="plus">+</span></button>
@@ -78,9 +79,10 @@ console.log(andre);
         <p>{produkt.produkt_vaskeanvisninger}</p>
     </div>
     </div>
-    <hr>
+        <hr>
+  </div>
     <h2>{produkt.produkt_pris} DKK</h2>
-    <p class="infotekst kursiv">Levering beregnes ved betaling</p>
+    <p id="pris_info" class="infotekst kursiv">Levering beregnes ved betaling</p>
     <Knapper variant="primary">KØB</Knapper>
 
     <p class="bold">Køb hele outfitet</p>
@@ -98,7 +100,7 @@ console.log(andre);
 <style>
 /* Tilbage til shop knap */
 .top{
-  margin: var(--mobile-40);
+  margin: 0 1.25rem 2.5rem 2.5rem;
 }
 .button img {
   max-width: 115px;
@@ -165,7 +167,7 @@ button.next {
   right: 10px; /* Pil til højre */
 }
 
-h1, p{
+.produktnavn, p{
   padding-top: var(--mobile-20);
 }
    a {
@@ -187,6 +189,9 @@ h1, p{
     font-weight: 900;
     font-size: 16px;
    }
+   .harmonika{
+    margin-block: var(--mobile-20);
+   }
 
    .fold_ud {
     display: flex;
@@ -194,10 +199,21 @@ h1, p{
    }
    .fold_ud_tekst {
     display: none; /* Skjul tekstcontainer som standard */
+  }
+#pris_info{
+padding-block: 4px;
 }
+.bold{
+  padding-top: var(--mobile-80);
+  padding-bottom: var(--mobile-20);
+}
+  
 
 /* Desktop styling */
 @media (min-width: 769px) {
+  .top{
+  margin: var(--mobile-40);
+}
   .single_view{
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -215,6 +231,9 @@ h1, p{
 
   button {
     display: none; /* Skjul knapper på desktop */
+  }
+  .info_kolonne{
+    margin-inline: var(--desk-40);
   }
 }
 
