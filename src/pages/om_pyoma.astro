@@ -111,7 +111,6 @@ import "../css/generelt.css"
     .om_fifhead{
     padding-top: 0;
 }
-/* Design af tabellen */
     .stand_tabel{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -139,8 +138,16 @@ import "../css/generelt.css"
         padding-bottom: var(--mobile-20);
 }
 
+  /* MELLEM STØRRELSE */
+  @media(min-width:650px) {
+    .om_pyoma {
+      margin-inline: var(--desk-80);
+    }
+    }
+  
+
 /* DESKTOP */
-@media(min-width:650px){
+@media(min-width:1000px){
     .om_pyoma{
         margin-inline: var(--desk-20); /* Luft højre venstre*/
     }
@@ -191,7 +198,6 @@ import "../css/generelt.css"
     .size_guide{
         grid-column: 2/3;
         grid-row: 2/3;
-        padding-inline: 7rem;
     }
     .fragt_container{
         display: grid;

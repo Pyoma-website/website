@@ -5,14 +5,14 @@ import "../css/generelt.css"
 
 <Mainlayout>
 <div class="kontakt_side">
-<h1 class="kontakt">Kontakt</h1>
+<h1>Kontakt</h1>
 <p>Vi vil altid gerne hjælpe og svare på spørgsmål.</p>
-<h2 class="kundeservice">Kundeservice for website</h2>
+<h2>Kundeservice for website</h2>
 <p>Har du spørgsmål til vores koncept, tøjet, hjemmesiden eller dit køb, er du altid velkommen til at kontakte os. Vi vil altid gerne høre fra dig.</p>
-<p class="kontakte">Du kan kontakte os på telefon, mail eller på sociale medier.</p>
+<p>Du kan kontakte os på telefon, mail eller på sociale medier.</p>
 <p class="mail"><a href="mailto:pyoma@kontakt.com">pyoma@kontakt.com</a></p>
 <p><a href="tel:+4501020304">+45 01 02 03 04</a></p>
-<h2 class="åbningstider">Åbningstider for kundeservice</h2>
+<h2>Åbningstider for kundeservice</h2>
 <p>Mandag-fredag fra 9.00-16.00</p>
 <p class="henvendelser">Vi forsøger på at besvare alle henvendelser inden for 24 timer på hverdage.</p>
 <div class="form">
@@ -26,30 +26,15 @@ import "../css/generelt.css"
 
 <style>
 .kontakt_side {
-   color: var(--mahogany-red);
-   text-align: center;
-   margin-inline: var(--mobile-20);
-   padding: var(--moblie-40);
-}
-.kontakt{
-    padding-bottom: var(--mobile-20);
-}
-.kundeservice{
-    padding-top: var(--mobile-80);
-    padding-bottom: var(--mobile-20);
-}
+    color: var(--mahogany-red);
+    text-align: center;
+    padding: var(--mobile-40);
+    max-width: 75ch; 
+    margin-inline: auto;
+    }
+
 .mail{
-    padding-top: var(--mobile-40);
-    padding-bottom: var(--mobile-20); 
     text-decoration: underline;
-}
-.åbningstider{
-    padding-top: var(--mobile-80);
-    padding-bottom: var(--mobile-20);
-}
-.henvendelser{
-    padding-top: var(--mobile-20);
-    padding-bottom: var(--mobile-80);
 }
 .form {
    color: var(--mahogany-red);
@@ -58,11 +43,16 @@ import "../css/generelt.css"
    border-radius: 0;
    border: 1px; 
    border-color: var(--mahogany-red);
+}
 
    input::placeholder {
-font-family: "minion_proregular";
-  font-size: 12px;
-  color: var(--mahogany-red);
+    font-family: "minion_proregular";
+    font-size: 12px;
+    color: var(--mahogany-red);
+}
+
+p.henvendelser {
+    padding-bottom: var(--desk-80);
 }
 
 input {
@@ -71,19 +61,4 @@ input {
    padding: 5px;
    width: 300px;
 }
-}
-   @media(min-width:650px){
-       .kontakt_side{
-       margin-inline: 34.5%;
-       }
-       .kontakte, .henvendelser{
-        padding-top: var(--desk-20);
-       }
-       .åbningstider{
-        padding-top: var(--desk-160);
-       }
-       .henvendelser{
-        padding-bottom: var(--desk-160);
-       }
-   }
 </style>

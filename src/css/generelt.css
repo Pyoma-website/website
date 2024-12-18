@@ -95,14 +95,14 @@ a {
   font-family: "minion_proregular";
   font-size: 12px;
   color: var(--mahogany-red);
-  padding-bottom: var(--mobile-20);
+  padding-top: var(--mobile-0);
 }
 
 /* IPAD VERSION */
 @media (min-width: 650px) {
   h2 {
     font-size: 36px;
-    padding-top: var(--mobile-160);
+    padding-top: var(--desk-160);
   }
 
   p {

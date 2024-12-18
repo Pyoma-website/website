@@ -1,5 +1,4 @@
 ---
-
 const { andre } = Astro.props;
 import Knapper from "./Knapper.astro";
 ---
@@ -7,7 +6,7 @@ import Knapper from "./Knapper.astro";
       <section class="grid">
       <div>
         <a href={`${andre.slug}`}>{andre.produkt_navn}</a>
-      <p> Str. {andre.produkt_str} – {andre.produkt_pris} DKK</p>
+      <p class="infotekst"> Str. {andre.produkt_str} – {andre.produkt_pris} DKK</p>
       </div>
        <div class="knap">
       <Knapper variant="second">KØB</Knapper>
@@ -23,7 +22,6 @@ import Knapper from "./Knapper.astro";
       cursor: pointer;
       text-transform: uppercase;
       text-decoration: underline;
-      font-size: 16px;
     }
 
     .grid {
