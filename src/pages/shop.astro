@@ -152,29 +152,53 @@ const produkter = await fetch ("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {  // Når hele DOM'en er indlæst, køres scriptet 
-      const links = document.querySelectorAll(".drop_link");  // Opretter konstant som vælger alle links (klasser med .drop_link)
+    const links = document.querySelectorAll(".drop_link");  // Opretter konstant som vælger alle links (klasser med .drop_link)
 
-      links.forEach(link => {  // Går igennem hvert link 
-          link.addEventListener("click", (event) => { // tilføjer eventlisteneren click 
-          links.forEach(l => l.classList.remove("active")); // Fjerner klassen 'active' fra alle links for at nulstille deres styling
-          link.classList.add("active"); // Tilføjer klassen 'active' til det aktive link
-    
-          links.forEach(l => {   // Opdaterer tekst for alle links
-              const tekst = l.dataset.drop;  // Opretter konstant, hvor data-drop attributen hentes
+    links.forEach(link => {  //Går igennem hvert link 
+        link.addEventListener("click", (event) => {  // tilføjer eventlisteneren click
 
-              if (l.classList.contains("active")) {  
-              l.textContent = `DROP ${tekst}`;}  // Hvis linket har klassen 'active' tilføjes "DROP" foran teksten 
-              else {    
-              l.textContent = tekst;} // Hvis linket ikke er aktivt, vises kun data-drop værdien
-          });
+            links.forEach(link => {  //Går igennem hvert link for at nustille
+                link.classList.remove("active");  // Fjerner klassen 'active' fra alle links for at nulstille deres styling
+                link.textContent = link.dataset.drop; // Nulstil tekst til data-drop værdien
+            });
 
-          const scrollId = `drop${link.dataset.drop}`;  // Konstant som laver en unik Id-værdi ud fra data-drop-attributten
-          const scrollElement = document.getElementById(scrollId); // Finder det tilsvarende DOM-element med denne Id værdien 
+        link.classList.add("active"); // Tilføjer klassen 'active' til det aktive link
+        link.textContent = `DROP ${link.dataset.drop}`;  // Hvis linket har klassen 'active' tilføjes "DROP" foran teksten 
 
-          if (scrollElement) {
-              scrollElement.scrollIntoView({ behavior: 'smooth' });  // Findes elementet scroller siden automatisk ned til det med en glidende animation
-              }
-              });
-      });
-  });
+        // Scroll til det tilsvarende element, hvis det findes
+        const scrollElement = document.getElementById(`drop${link.dataset.drop}`);  // Konstant som laver en unik Id-værdi ud fra data-drop-attributten
+
+        if (scrollElement) {
+            scrollElement.scrollIntoView({ behavior: 'smooth' }); // Findes elementet scroller siden automatisk ned til det med en glidende animation
+            }
+        });
+    });
+});
 </script>
+
+  // document.addEventListener("DOMContentLoaded", () => {  // Når hele DOM'en er indlæst, køres scriptet 
+  //     const links = document.querySelectorAll(".drop_link");  // Opretter konstant som vælger alle links (klasser med .drop_link)
+
+  //     links.forEach(link => {  // Går igennem hvert link 
+  //         link.addEventListener("click", (event) => { // tilføjer eventlisteneren click 
+  //         links.forEach(l => l.classList.remove("active")); // Fjerner klassen 'active' fra alle links for at nulstille deres styling
+  //         link.classList.add("active"); // Tilføjer klassen 'active' til det aktive link
+    
+  //         links.forEach(l => {   // Opdaterer tekst for alle links
+  //             const tekst = l.dataset.drop;  // Opretter konstant, hvor data-drop attributen hentes
+
+  //             if (l.classList.contains("active")) {  
+  //             l.textContent = `DROP ${tekst}`;}  // Hvis linket har klassen 'active' tilføjes "DROP" foran teksten 
+  //             else {    
+  //             l.textContent = tekst;} // Hvis linket ikke er aktivt, vises kun data-drop værdien
+  //         });
+
+  //         const scrollId = `drop${link.dataset.drop}`;  // Konstant som laver en unik Id-værdi ud fra data-drop-attributten
+  //         const scrollElement = document.getElementById(scrollId); // Finder det tilsvarende DOM-element med denne Id værdien 
+
+  //         if (scrollElement) {
+  //             scrollElement.scrollIntoView({ behavior: 'smooth' });  // Findes elementet scroller siden automatisk ned til det med en glidende animation
+  //             }
+  //             });
+  //     });
+  // });
