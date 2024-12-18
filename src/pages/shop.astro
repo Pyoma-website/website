@@ -50,24 +50,17 @@ const produkter = await fetch ("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1
 
 </ul>
 </div>
-<div id="drop7"></div>
-<div id="drop6"></div>
-<div id="drop5"></div>
-<div id="drop4"></div>
-<div id="drop3"></div>
-<div id="drop2"></div>
-<div id="drop1"></div>
 <div class="drop_bar">
-<a href="/shop#drop10" class="drop_link" data-drop="10">10</a>
-<a href="/shop#drop9" class="drop_link" data-drop="9">9</a>
-<a href="/shop#drop8" class="drop_link" data-drop="8">8</a>
-<a href="" class="drop_link" data-drop="7">7</a>
-<a href="" class="drop_link" data-drop="6">6</a>
-<a href="" class="drop_link" data-drop="5">5</a>
-<a href="" class="drop_link" data-drop="4">4</a>
-<a href="" class="drop_link" data-drop="3">3</a>
-<a href="" class="drop_link" data-drop="2">2</a>
-<a href="" class="drop_link" data-drop="1">1</a>
+<a class="drop_link" data-drop="10">10</a>
+<a class="drop_link" data-drop="9">9</a>
+<a class="drop_link" data-drop="8">8</a>
+<a class="drop_link" data-drop="7">7</a>
+<a class="drop_link" data-drop="6">6</a>
+<a class="drop_link" data-drop="5">5</a>
+<a class="drop_link" data-drop="4">4</a>
+<a class="drop_link" data-drop="3">3</a>
+<a class="drop_link" data-drop="2">2</a>
+<a class="drop_link" data-drop="1">1</a>
 </div>
 </div>
 </Mainlayout>
@@ -172,12 +165,12 @@ document.addEventListener("DOMContentLoaded", () => {
             // Fjerner klassen 'active' fra alle links for at nulstille deres styling
             links.forEach(l => l.classList.remove("active"));
 
-            // Tilføjer klassen 'active' til det aktuelle (aktive) link
+            // Tilføjer klassen 'active' til det aktive link
             link.classList.add("active");
 
             // Opdaterer tekst for alle links
             links.forEach(l => {
-              // Henter data-drop attributen (f.eks. "10", "9", osv.)
+              // Henter data-drop attributen
                 const dropText = l.dataset.drop;
                 // Hvis linket har klassen 'active', tilføjes "DROP" foran teksten
                 if (l.classList.contains("active")) {
