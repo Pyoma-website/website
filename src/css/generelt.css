@@ -79,6 +79,7 @@ p {
   font-family: "minion_proregular";
   font-size: 16px;
   color: var(--mahogany-red);
+  line-height: 24px;
 }
 
 a {
