@@ -122,13 +122,14 @@ const produkter = await fetch ("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1
 
     .drop_bar {
       display: flex;
-      position: fixed;
       gap: 20px;
-      top: 305px;
-      right: 144px;
       writing-mode: vertical-rl;
       text-orientation: sideways;
       cursor: pointer;
+
+      position: fixed;
+      top: 305px;
+      right: 144px;
     }
 
     .drop_link {
@@ -151,21 +152,19 @@ const produkter = await fetch ("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1
 
 <script>
   // Når hele DOM'en er indlæst, køres scriptet 
-document.addEventListener("DOMContentLoaded", () => {
-  // Opretter konstant som vælger alle links (classes med .drop_link)
-    const links = document.querySelectorAll(".drop_link");
+  document.addEventListener("DOMContentLoaded", () => {
+      // Opretter konstant som vælger alle links (classes med .drop_link)
+      const links = document.querySelectorAll(".drop_link");
+      // Går igennem hvert link og tilføj en click-event listener
 
-     // Går igennem hvert link og tilføj en click-event listener
-    links.forEach(link => {
-        link.addEventListener("click", (event) => {
+      links.forEach(link => {
+          link.addEventListener("click", (event) => {
           // Fjerner standardadfærden ved klik (navigation via href)
-            event.preventDefault();
-
-            // Fjerner klassen 'active' fra alle links for at nulstille deres styling
-            links.forEach(l => l.classList.remove("active"));
-
-            // Tilføjer klassen 'active' til det aktive link
-            link.classList.add("active");
+          event.preventDefault();
+          // Fjerner klassen 'active' fra alle links for at nulstille deres styling
+          links.forEach(l => l.classList.remove("active"));
+          // Tilføjer klassen 'active' til det aktive link
+          link.classList.add("active");
 
             // Opdaterer tekst for alle links
             links.forEach(l => {
