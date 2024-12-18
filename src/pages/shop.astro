@@ -17,7 +17,7 @@ const produkter = await fetch ("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1
 <div class="produkter">
 <div  id="drop10">
 <h1>Drop 10</h1>
-<p class="beskrivelse">Dette drop har fokus på tidløse jakker og fine nederdele, der gør lag-på-lag til en sjov og legende kunst her i den kolde tid. </p>
+<p class="beskrivelse">Dette drop har fokus på tidløse jakker og fine nederdele, der gør lag-på-lag til en legende kunst her i den kolde tid. </p>
 </div> 
 <ul class="grid">
   {
@@ -39,7 +39,7 @@ const produkter = await fetch ("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1
 </ul>
 <div id="drop8">
 <h1>Drop 8</h1>
-<p class="beskrivelse">Let, luftigt og fyldt med farver – dette drop har fokus på den perfekte garderobe til solrige dage og lune aftener, så du kan føle dig godt tilpas, uanset hvor sommeren bringer dig hen.</p>
+<p class="beskrivelse">Luftigt og fyldt med farver – dette drop har fokus på en garderobe til solrige dage og lune aftener, så du kan føle dig godt tilpas, uanset hvor sommeren bringer dig hen.</p>
 </div>
  <ul class="grid">
   {
@@ -105,18 +105,18 @@ const produkter = await fetch ("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1
     .main {
       margin-inline: var(--desk-80);
     }
-
-     #drop10, #drop9, #drop8 {
-      text-align: center;
-      margin-inline: auto;
-      max-width: 75ch;
     }
-  }
+  
     /* DESKTOP VERSION */
    @media(min-width:1000px){
     .main {
       display: grid;
       grid-template-columns: 6fr 1fr;
+    }
+      #drop10, #drop9, #drop8 {
+      text-align: center;
+      margin-inline: auto;
+      max-width: 75ch; 
     }
     
     .grid {
@@ -130,13 +130,13 @@ const produkter = await fetch ("https://aoxvweiitrgqnzrjdlqp.supabase.co/rest/v1
     }
 
     .drop_bar {
-      display: block;
+      display: flex;
       position: fixed;
-      top: 334px;
+      gap: 20px;
+      top: 305px;
       right: 144px;
       writing-mode: vertical-rl;
       text-orientation: sideways;
-      letter-spacing: 5px;
     }
 
     .drop_link {
