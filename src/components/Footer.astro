@@ -9,20 +9,20 @@ import "../css/generelt.css"
 <li><a href="/kontakt">KONTAKT</a></li>
 <li><a href="/om_pyoma#forsendelse">RETUR POLITIK</a></li>
 <li><a href="/om_pyoma#forsendelse">FORSENDELSE & AFHENTNING</a></li>
-<li><a href="">COOKIES & PRIVACY POLICY</a></li>
+<li><a>COOKIES & PRIVACY POLICY</a></li>
 <div class="ikoner">
 <a href="https://www.instagram.com/pyomavintage/"><img src="/instagram.svg" alt="insta"></a>
 <a href="https://www.tiktok.com/@pyomavintage"><img src="/tiktok.svg" alt="tiktok"></a>
 </div>
    </ul>
 <div class="logo">
-   <a href=""><img src="/logoer/redlogo.png" alt="logo"></a>
+   <a href="/"><img src="/logoer/redlogo.png" alt="logo"></a>
 </div>
 </div>
 
 <div class="form">
 <form action="/submit" method="post">
-   <p class="info">Tilmeld dig vores nyhedsbrev:</p>
+   <p class="info">Tilmeld dig vores nyhedsbrev</p>
    <input type="text" placeholder="Indtast din Email" name="name">
 </form>
 </div>
@@ -31,6 +31,10 @@ import "../css/generelt.css"
 /* MOBILE VERSION */
 article {
    margin: var(--mobile-20);
+}
+
+hr {
+   margin-block: var(--mobile-20);
 }
 
 input::placeholder {
@@ -48,31 +52,38 @@ input {
 
 .footer {
    display: grid;
-   grid-template-columns: 3fr 1fr; 
+   grid-template-columns: 5fr 1fr; 
    line-height: 2rem;
   
 }
 
 .logo {
-   width: 7rem;
-   height: 7rem;
-   grid-column: 3/3;
+   width: 5rem;
+   height: 5rem;
+   grid-column: 2/3;
 }
 
-.form {
+form. {
    color: var(--mahogany-red);
    text-align: center;
    margin-inline: auto;
    border-radius: 0;
    border: 1px; 
    border-color: var(--mahogany-red);
+   padding-bottom: 30px;
 }
 
 .ikoner {
-   width: 4rem;
-   height: 4rem;
+   margin-top: 1rem;
+   width: 5rem;
+   height: 5rem;
    display: grid;
    grid-template-columns: 1fr 1fr; 
+   gap: 10px;
+}
+
+.info {
+   margin-bottom: 2px;;
 }
 
 /* DESKTOP VERSION */
@@ -80,14 +91,29 @@ input {
 
    article {
    margin: var(--desk-40);
-}
+   }
 
-.form {
-display: flex;
-justify-content: flex-end;
-margin-top: -80px; 
-}
+   .logo {
+      place-self: start end;
+   }
 
- }
+   hr {
+   margin-block: var(--desk-40);
+   }
+
+   .form {
+   display: flex;
+   justify-content: flex-end;
+   margin-top: -100px; 
+   }
+
+   .info {
+      text-align: end;
+   }
+
+   a {
+   line-height: 2.5rem;
+   }
+}
 
 </style>
