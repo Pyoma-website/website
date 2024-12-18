@@ -70,9 +70,10 @@ h1 {
 
 h2 {
   font-family: "minion_proregular";
-  font-size: 24px;
   font-weight: bold;
+  font-size: 24px;
   color: var(--mahogany-red);
+  padding-top: var(--mobile-80);
 }
 
 p {
@@ -80,19 +81,41 @@ p {
   font-size: 16px;
   color: var(--mahogany-red);
   line-height: 26px;
+  padding-top: var(--mobile-20);
 }
 
 a {
   font-family: "minion_proregular";
-  text-decoration: none;
-  color: var(--mahogany-red);
   font-size: 16px;
+  color: var(--mahogany-red);
+  text-decoration: none;
 }
 
 .infotekst {
   font-family: "minion_proregular";
   font-size: 12px;
   color: var(--mahogany-red);
+  padding-bottom: var(--mobile-20);
+}
+
+/* IPAD VERSION */
+@media (min-width: 650px) {
+  h2 {
+    font-size: 36px;
+    padding-top: var(--mobile-160);
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  a {
+    font-size: 18px;
+  }
+
+  .infotekst {
+    font-size: 16px;
+  }
 }
 
 /* DESKTOP VERSION */
@@ -109,6 +132,7 @@ a {
 
   h2 {
     font-size: 36px;
+    padding-top: var(--desk-160);
   }
 
   p {
@@ -117,10 +141,6 @@ a {
 
   a {
     font-size: 21px;
-  }
-
-  .infotekst {
-    font-size: 16px;
   }
 
   #drop10,
