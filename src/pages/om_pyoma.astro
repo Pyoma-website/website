@@ -1,7 +1,6 @@
 ---
 import Mainlayout from "../layouts/Mainlayout.astro";
 import "../css/generelt.css"
-import "../css/afvigelser.css"
 ---
 
 <Mainlayout>
@@ -10,7 +9,9 @@ import "../css/afvigelser.css"
         <h1>Om Pyoma</h1>
         <p id="pyoma_beskrivelse">“Pyoma er mere end blot et brand: det er en stemning og et univers.”</p>
     </div>
+    <div class="yellow_container">
         <img class="yellow_shirt" src="/om_pyoma/tee_girl.webp" alt="pige i tee">
+    </div>
 </div>
 
 <section class="om_pyoma">
@@ -92,11 +93,18 @@ import "../css/afvigelser.css"
     #pyoma_beskrivelse{
         padding: var(--mobile-20);
 }
-    /* .yellow_shirt{
-        margin-left: 40px; } /* Luft venstre */
+
+    .yellow_container {
+        width: 100%;
+        display: flex;
+    }
+    .yellow_shirt{
+        width: 90%;
+        margin-left: auto;
+    }
     h2{
         padding-top: var(--mobile-80); /* Luft mellem afsnit */
-}
+    }
     p, img{
         padding-bottom: var(--mobile-20);
 }
@@ -155,6 +163,7 @@ import "../css/afvigelser.css"
         object-fit: cover;
         height: 49rem;
         place-items: end;
+        width: 100%;
     }
     .stand_container{
         display: grid;
