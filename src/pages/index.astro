@@ -19,17 +19,17 @@ import HeaderRed from "../components/Header_red.astro"
       <HeaderRed />
     <main>
 <div class="forside_container">
-  <div class="first_one">
-    <img class="forside_backg" src="../../public/forside/forside_billede2.jpg" alt="pige">
-     </div>
+    <div class="first_one">
+      <img class="forside_backg" src="../../public/forside/forside_billede2.jpg" alt="pige">
+    </div>
     <div class="overlay_content">
-      <img class="forside_logo" src="../../public/logoer/dessertlogo.png" alt="dessertlogo">
+      <img class="forside_logo" src="../../public/logoer/forside_stor.png" alt="dessertlogo">
       <h1 class="forside_h1">Italiensk vintage</h1>
     </div>
     <div class="forside_turn">
-    <p class="knap_overskrift">NYESTE DROP</p>
-    <a href="/shop">
-   <button class="forside_knap" type="button">Drop 10</button></a>
+      <p class="knap_overskrift">NYESTE DROP</p>
+      <a href="/shop">
+      <button class="forside_knap" type="button">Drop 10</button></a>
    </div>
 </div>
   </main>
@@ -39,103 +39,93 @@ import HeaderRed from "../components/Header_red.astro"
 
 <style>
   /* MOBILE VERSION */
-  body {
-  background: var(--mahogany-red);
-  overflow: hidden;
-  }
-
-  .forside_h1 {
-  color: var(--desert-storm-white);
-  }
-  
-  /* Grid er påsat her, for at der kommer luft i højre side, samt at få placeret hvor billederne og teksten skal være. */
-  .forside_container{
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    height: 100vh; /* Fylder hele skærmen i højden */
-    width: 100%; /* Fylder hele bredden */
-    position: relative; /* For absolut placerede elementer */
-  }
-  .first_one{
-    grid-column: 1/2;
-    grid-row: 1/4;
-  }
-
-.forside_backg{
-     height: 100%;
-    object-fit: cover;
-    object-position: 55% 100%;
+    body {
+        background: var(--mahogany-red);
+        overflow: hidden;
 }
 
-  .overlay_content{
-    padding-top: 60px;
-    position: absolute;
-    margin-left: var(--mobile-40);
-  }
+    .forside_h1 {
+        color: var(--desert-storm-white);
+}
+    .forside_container{
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        height: 100vh; 
+        width: 100%; 
+        position: relative; 
+}
+    .first_one{
+        grid-column: 1/2;
+        grid-row: 1/4;
+}
+    .forside_backg{
+        height: 100%;
+        object-fit: cover;
+        object-position: 55% 100%;
+}
+      .overlay_content{
+        padding-top: 60px;
+        position: absolute;
+        margin-left: var(--mobile-40);
+}
   
 .forside_turn{
-  writing-mode: vertical-rl;
-  text-orientation: sideways;
-  grid-column: 2/3;
-  grid-row: 3/4;
-  letter-spacing: 4.8px;
-  margin-block: auto;
+        writing-mode: vertical-rl;
+        text-orientation: sideways;
+        grid-column: 2/3;
+        grid-row: 3/4;
+        letter-spacing: 4.8px;
+        margin-block: auto;
 }
   .forside_knap{
-     cursor: pointer;
-      padding: 15px 6px;
-      border: solid 1px;
-      border-color: var(--desert-storm-white);
-      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
-      background-color: #ffffff00;  
+        cursor: pointer;
+        padding: 15px 6px;
+        border: solid 1px;
+        border-color: var(--desert-storm-white);
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+        background-color: #ffffff00;  
 
-      color: var(--desert-storm-white);
-      font-family: "minion_proregular";
-      font-size: 1.25rem;
-      text-transform: uppercase;
-      letter-spacing: 4.8px;
-  }
+        color: var(--desert-storm-white);
+        font-family: "minion_proregular";
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        letter-spacing: 4.8px;
+}
   .forside_knap:hover {
-      background: var(--desert-storm-white);
-      border-color: var(--desert-storm-white); 
-
-      color: var(--mahogany-red); 
-   }
-  /* det skal flyttes til afvigelser */
-.knap_overskrift{
-      color: var(--desert-storm-white);
-      padding-right: 10px;
+        background: var(--desert-storm-white);
+        border-color: var(--desert-storm-white); 
+        color: var(--mahogany-red); 
+}
+  .knap_overskrift{
+        color: var(--desert-storm-white);
+        padding-right: 10px;
         padding-left: 10px;
+}
+
+/* DESKTOP VERSION */
+@media(min-width:650px){
+    .forside_container{
+        grid-template-columns: 4fr 1fr;
+        grid-template-rows: 2fr 1.5fr;
+  }
+    .first_one{
+        padding-top: var(--desk-80);
+        object-position: 55% 100%;
+  }
+    .forside_logo {
+        margin-top: -8rem; 
   }
 
-    /* DESKTOP VERSION */
-   @media(min-width:650px){
- .forside_container{
-    grid-template-columns: 4fr 1fr;
+    .forside_h1 {
+        text-align: end;
   }
-  .first_one{
-    padding-top: var(--desk-80);
-     object-position: 55% 100%;
-  }
-  /* .overlay_content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-  } */
-
-.forside_logo {
-   margin-top: -8rem; 
-  }
-
-  .forside_h1 {
-    /* margin-left: 10rem; */
-  }
-  .forside_turn{
-    place-self: start center;
+    .forside_turn{
+        grid-row: 2/3;
+        place-self: start center;
   }
   .knap_overskrift{
-    padding-left: 20px;
+        padding-left: 20px;
+  }
 }
- }
 </style>
