@@ -53,7 +53,7 @@ li {
 
 hr {
   background-color: var(--mahogany-red);
-  height: 1px;
+  height: 2px;
   border-width: 0;
   color: var(--mahogany-red);
 }
