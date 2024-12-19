@@ -1,5 +1,4 @@
 ---
-const { title } = Astro.props;
 import HeaderDessert from "../components/Header_dessert.astro";
 import Footer from "../components/Footer.astro";
 import "../css/generelt.css"
@@ -18,12 +17,10 @@ import "../css/generelt.css"
 		<link rel="preconnect" href="https://fonts.googleapis.com"> <!--Henter Google-font -->
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--Henter Google-font -->
 		<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet"> <!--Henter Google-font -->
-		<title>{title}</title>
 	</head>
 	<body>
     <HeaderDessert />
     <main>
-      <h1>{title}</h1>
       <slot />
     </main>
     <Footer/>
